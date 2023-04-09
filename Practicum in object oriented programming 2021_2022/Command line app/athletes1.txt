@@ -1,0 +1,50 @@
+1!A Dijiang!M!24!180!80
+2!A Lamusi!M!23!170!60
+3!Gunnar Nielsen Aaby!M!24!NA!NA
+4!Edgar Lindenau Aabye!M!34!NA!NA
+5!Christine Jacoba Aaftink!F!21!185!82
+6!Per Knut Aaland!M!31!188!75
+7!John Aalberg!M!31!183!72
+8!Cornelia Cor Aalten (-Strannood)!F!18!168!NA
+9!Antti Sami Aalto!M!26!186!96
+10!Einar Ferdinand Einari Aalto!M!26!NA!NA
+11!Jorma Ilmari Aalto!M!22!182!76.5
+12!Jyri Tapani Aalto!M!31!172!70
+13!Minna Maarit Aalto!F!30!159!55.5
+14!Pirjo Hannele Aalto (Mattila-)!F!32!171!65
+15!Arvo Ossian Aaltonen!M!22!NA!NA
+16!Juhamatti Tapio Aaltonen!M!28!184!85
+17!Paavo Johannes Aaltonen!M!28!175!64
+18!Timo Antero Aaltonen!M!31!189!130
+19!Win Valdemar Aaltonen!M!54!NA!NA
+20!Kjetil Andr Aamodt!M!20!176!85
+21!Ragnhild Margrethe Aamodt!F!27!163!NA
+22!Andreea Aanei!F!22!170!125
+23!Fritz Aanes!M!22!187!89
+24!Nils Egil Aaness!M!24!NA!NA
+25!Alf Lied Aanning!M!24!NA!NA
+26!Agnes Erika Aanonsen (-Eyde)!F!17!169!65
+27!Johan Aantjes!M!26!NA!NA
+28!Jan-Erik Aarberg!M!43!170!77
+29!Willemien Aardenburg!F!22!NA!NA
+30!Pepijn Aardewijn!M!26!189!72
+31!Evald rma (rman-)!M!24!174!70
+32!Olav Augunson Aarnes!M!23!NA!NA
+33!Mika Lauri Aarnikka!M!24!187!76
+34!Jamale (Djamel-) Aarrass (Ahrass-)!M!30!187!76
+35!Dagfinn Sverre Aarskog!M!24!190!98
+36!Stefan Remco Aartsen!M!21!194!78
+37!Ann Kristin Aarnes!F!23!182!64
+38!Karl Jan Aas!M!20!NA!NA
+39!Lars Thorlaksn Aas!M!33!NA!NA
+40!Roald Edgar Aas!M!23!NA!NA
+41!Rolf Aas!M!28!NA!NA
+42!Thomas Valentin Aas!M!25!NA!NA
+43!Morten Gjerdrum Aasen!M!34!185!75
+44!Meelis Aasme!M!25!182!73
+45!Hakon Aasns!M!41!NA!NA
+46!Hans Aasns!M!33!194!93
+47!Erling Rudolf Aastad!M!22!177!74
+48!Abdelhak Aatakni!M!24!NA!64
+49!Moonika Aava!F!24!168!65
+50!Arvi Aavik!M!22!185!106

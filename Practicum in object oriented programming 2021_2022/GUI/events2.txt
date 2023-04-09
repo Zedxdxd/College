@@ -1,0 +1,21 @@
+1956 Winter!Cortina d'Ampezzo!Cross Country Skiing!Cross Country Skiing Men's 30 kilometres!Individual!Norway!1!
+1992 Summer!Barcelona!Athletics!Athletics Men's Hammer Throw!Individual!Unified Team!26!Gold
+1992 Summer!Barcelona!Athletics!Athletics Men's Hammer Throw!Individual!Bahrein!2!
+1992 Summer!Barcelona!Football!Football Men's Football!Team!Egypt!['3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '50', '19']!
+1992 Summer!Barcelona!Swimming!Swimming Women's 4 x 100 metres Freestyle Relay!Team!Japan!['20', '21', '22', '23']!
+1980 Winter!Lake Placid!Cross Country Skiing!Cross Country Skiing Men's 50 kilometres!Individual!Soviet Union!24!Bronze
+1980 Winter!Lake Placid!Cross Country Skiing!Cross Country Skiing Men's 50 kilometres!Individual!France!25!
+2014 Winter!Sochi!Ski Jumping!Ski Jumping Men's Normal Hill, Individual!Individual!Poland!26!Gold
+2014 Winter!Sochi!Ski Jumping!Ski Jumping Men's Normal Hill, Individual!Individual!Bulgaria!27!
+2014 Winter!Sochi!Ski Jumping!Ski Jumping Men's Large Hill, Individual!Individual!Switzerland!28!
+2014 Winter!Sochi!Biathlon!Biathlon Men's 15 kilometres Mass Start!Individual!Austria!29!
+2008 Summer!Beijing!Sailing!Sailing Mixed Multihull!Team!Belgium!['30', '31']!
+2008 Summer!Beijing!Sailing!Sailing Mixed Multihull!Team!China!['32', '33']!
+2008 Summer!Beijing!Sailing!Sailing Mixed Multihull!Team!Spain!['34', '35']!Gold
+1972 Summer!Munich!Fencing!Fencing Men's Foil, Team!Team!France!['36', '37', '38', '39', '40']!Bronze
+1972 Summer!Munich!Fencing!Fencing Men's Foil, Team!Team!France!['41', '42', '43', '44']!
+1972 Summer!Munich!Boxing!Boxing Men's lightweight!Individual!France!['1', '2']!Bronz
+1972 Summer!Munich!Boxing!Boxing Men's Welterweight!Individual!France!['3', '4', '5', '6']!
+1972 Summer!Munich!Boxing!Boxing Men's Welterweight!Individual!Bahrein!48!
+1972 Summer!Munich!Boxing!Boxing Men's Welterweight!Individual!France!41!Gold
+1972 Summer!Munich!Boxing!Boxing Men's lightweight!Individual!Mongolia!50!Silver
