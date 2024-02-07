@@ -1,0 +1,366 @@
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+parser code {:
+
+	Logger log = Logger.getLogger(getClass());
+	boolean errorDetected = false;
+   
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("\nSintaksna greska", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	errorDetected = true;
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.error(msg.toString());
+    }
+
+:}
+
+
+init with {:
+	errorDetected = false;
+:}
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+terminal PROGRAM, BREAK, CLASS, ELSE, CONST, IF, NEW, PRINT, READ, RETURN, VOID, EXTENDS, CONTINUE, FOR;
+terminal STATIC, NAMESPACE, PLUS, MINUS, ASTERISK, SLASH, PERCENT, LOGICAL_EQUALS, LOGICAL_NOT_EQUALS;
+terminal GREATER_OR_EQUALS, GREATER, LESS_OR_EQUALS, LESS, LOGICAL_AND, LOGICAL_OR, INCREMENT, DECREMENT;
+terminal SEMICOLON, DOUBLE_COLON, COMMA, DOT, LEFT_PAREN, RIGHT_PAREN, LEFT_BRACKET, RIGHT_BRACKET, LEFT_BRACE;
+terminal RIGHT_BRACE, FOREACH, EQUALS;
+terminal Integer NUMBER;
+terminal Boolean BOOL;
+terminal String IDENT;
+terminal Character CHAR;
+
+non terminal NamespaceList, GeneralDeclList, MethodDeclList, GeneralDecl;
+non terminal ConstDecl, VarDecl, ConstAssignmentList;
+non terminal ConstAssignment, VarDeclList, SingleVarDecl, StatementList, SingleTypeVarDeclList;
+non terminal SingleTypeVarDecl, FormPars, FormParsList, SingleFormPar, DesignatorStatement;
+non terminal Addop, Mulop, TermList, FactorList, Statement;
+non terminal ActPars, ActParsList, ForStatement, DesignatorList, ManyDesignators;
+non terminal DesignatorStatementList, SingleDesignator, Relop, CondTermList, ClassVarDeclList;
+non terminal CondFactList, StaticVarDeclList, StaticInitializerList, ClassMethodsList;
+non terminal StaticInitializer, DesignatorExtension, SingleDesignatorExtension, FinalForStatement;
+non terminal StaticInitializerStart, IfStart, ElseStart, FirstForSemicolon, SecondForSemicolon;
+
+non terminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgramName, NamespaceName, Namespace, Designator;
+non terminal rs.etf.pp1.symboltable.concepts.Obj ConstValue, MethodName, MethodDecl, FuncCallStart, DesignatorUnzipStart;
+non terminal rs.etf.pp1.symboltable.concepts.Obj ClassDeclStart, ClassDecl, StaticVarDeclStart, OneStaticInitializerStart;
+non terminal rs.etf.pp1.symboltable.concepts.Obj StaticVarDecl, DesignatorName;
+non terminal rs.etf.pp1.symboltable.concepts.Struct Type, Factor, Term, Expr, OneActPar, StartExpr;
+non terminal rs.etf.pp1.symboltable.concepts.Struct Condition, CondFact, CondTerm, ForLoopStart;
+
+precedence left ELSE;
+
+
+Program ::= (Program) ProgramName NamespaceList GeneralDeclList LEFT_BRACE MethodDeclList RIGHT_BRACE;
+
+
+ProgramName ::= (ProgramName) PROGRAM IDENT:progName;
+
+
+NamespaceList ::= (NamespaceDeclarations) NamespaceList Namespace
+				| (NoNamespace) /* epsilon */;
+				
+				
+Namespace ::= (Namespace) NamespaceName LEFT_BRACE GeneralDeclList LEFT_BRACE MethodDeclList RIGHT_BRACE RIGHT_BRACE;
+
+
+NamespaceName ::= (NamespaceName) NAMESPACE IDENT:namespaceName;
+
+
+GeneralDeclList ::= (GeneralDeclarations) GeneralDeclList GeneralDecl
+				| (NoGeneralDecl) /* epsilon */;
+				
+				
+GeneralDecl ::= (GenConstDecl) ConstDecl
+			| (GenVarDecl) VarDecl
+			| (GenClassDecl) ClassDecl;
+			
+			
+MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
+				| (NoMethodDecl) /* epsilon */;
+				
+				
+ConstValue ::= (ConstNumber) NUMBER
+			| (ConstChar) CHAR
+			| (ConstBool) BOOL;
+			
+				
+ConstDecl ::= (ConstDecl) CONST Type:varType ConstAssignmentList SEMICOLON;
+
+
+ConstAssignmentList ::= (ConstAssignments) ConstAssignmentList COMMA ConstAssignment
+					| (SingleConstAssignment) ConstAssignment;
+					
+					
+ConstAssignment ::= (ConstAssignment) IDENT:varName EQUALS ConstValue:val;
+
+
+Type ::=  (ScopeType) IDENT:scopeName DOUBLE_COLON IDENT:typeName
+		| (NoScopeType) IDENT:typeName;
+		
+		
+VarDecl ::= (VarDeclaration) Type:varType SingleTypeVarDeclList SEMICOLON
+			| error SEMICOLON:l {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null); :};
+			
+
+SingleTypeVarDeclList ::= (SingleTypeVarDeclarations) SingleTypeVarDeclList COMMA SingleTypeVarDecl
+						| (OneTypeVarDecl) SingleTypeVarDecl
+						| error COMMA:l {: parser.report_error("Izvrsen oporavak do , u liniji " + lleft, null); :} SingleTypeVarDecl;
+			
+			
+SingleTypeVarDecl ::= (ArrayDecl) IDENT:varName LEFT_BRACKET RIGHT_BRACKET
+					| (NonArrayDecl) IDENT:varName;
+				
+				
+ClassDecl ::= (ClassDecl) ClassDeclStart LEFT_BRACE StaticVarDeclList StaticInitializerStart ClassVarDeclList ClassMethodsList RIGHT_BRACE;
+
+
+ClassVarDeclList ::= (ClassVarDeclList) VarDeclList;
+
+			
+ClassDeclStart ::= (ExtendedClassDeclStart) CLASS IDENT:className EXTENDS Type
+				| error:l {: parser.report_error("Izvrsen oporavak do { u liniji " + lleft, null); :}
+				|  (BaseClassDeclStart) CLASS IDENT:className;
+			
+	
+MethodDecl ::= (MethodDecl) MethodName LEFT_PAREN FormPars RIGHT_PAREN VarDeclList LEFT_BRACE StatementList RIGHT_BRACE;
+
+
+MethodName ::= (TypeMethodName) Type:retType IDENT:methName
+			|  (VoidMethodName) VOID IDENT:methName;
+
+
+VarDeclList ::= (VarDeclarations) VarDeclList VarDecl
+			| (NoVarDecl) /* epsilon */;
+			
+			
+FormPars ::= (FormParams) FormParsList
+			| error:l {: parser.report_error("Izvrsen oporavak do ) u liniji " + lleft, null); :}
+			| (NoFormPars) /* epsilon */;
+
+			
+FormParsList ::= (FormParamsList) FormParsList COMMA SingleFormPar
+				| (OneFormPar) SingleFormPar
+				| error COMMA:l {: parser.report_error("Izvrsen oporavak do , u liniji " + lleft, null); :} SingleFormPar;
+
+	
+SingleFormPar ::= (FormParNonArray) Type IDENT:varName
+				| (FormParArray) Type IDENT:varName LEFT_BRACKET RIGHT_BRACKET;
+				
+				
+DesignatorStatement ::= (DesignatorAssignment) Designator:dest EQUALS Expr:e
+					|   (DesignatorIncrement) Designator INCREMENT
+					| 	(DesignatorDecrement) Designator DECREMENT
+					|   (DesignatorFuncCall) FuncCallStart ActPars RIGHT_PAREN
+					|   (DesignatorUnzip) DesignatorUnzipStart ManyDesignators ASTERISK Designator
+					 RIGHT_BRACKET EQUALS Designator;
+					
+					
+DesignatorUnzipStart ::= (DesignatorUnzipStart) LEFT_BRACKET;
+
+					
+StatementList ::= (StmtList) StatementList Statement
+				| (NoStatement) /* epsilon */;
+				
+				
+Statement ::= (DesignatorStmt) DesignatorStatement SEMICOLON
+			| error SEMICOLON:l {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null); :} 
+			| (ReadStmt) READ LEFT_PAREN Designator RIGHT_PAREN SEMICOLON
+			| (PrintSingleStmt) PRINT LEFT_PAREN Expr RIGHT_PAREN SEMICOLON
+			| (PrintMultipleStmt) PRINT LEFT_PAREN Expr COMMA NUMBER RIGHT_PAREN SEMICOLON
+			| (IfStmt) IfStart LEFT_PAREN Condition RIGHT_PAREN Statement
+			| (IfElseStmt) IfStart LEFT_PAREN Condition RIGHT_PAREN Statement ElseStart Statement
+			| (ErrorIfStmt) IfStart LEFT_PAREN error RIGHT_PAREN:l {: parser.report_error("Izvrsen oporavak do ) u liniji " + lleft, null); :} Statement 
+			| (BreakStmt) BREAK SEMICOLON
+			| (ContinueStmt) CONTINUE SEMICOLON
+			| (ReturnVoid) RETURN SEMICOLON
+			| (ReturnNonVoid) RETURN Expr SEMICOLON
+			| (ForConditionStmt) ForLoopStart LEFT_PAREN ForStatement FirstForSemicolon CondFact SecondForSemicolon FinalForStatement RIGHT_PAREN Statement
+			| (ForNoConditionStmt) ForLoopStart LEFT_PAREN ForStatement FirstForSemicolon SecondForSemicolon FinalForStatement RIGHT_PAREN Statement
+			| (StmtBlock) LEFT_BRACE StatementList RIGHT_BRACE;
+			
+			
+IfStart ::= (IfStart) IF;
+
+
+ElseStart ::= (ElseStart) ELSE;			
+			
+			
+ForLoopStart ::= (ForLoopStart) FOR;
+
+
+FirstForSemicolon ::= (FirstForSemicolon) SEMICOLON;
+
+
+SecondForSemicolon ::= (SecondForSemicolon) SEMICOLON;
+
+
+FinalForStatement ::= (FinalForStatement) ForStatement;
+
+			
+Expr ::= (NegativeExpr) MINUS StartExpr Term TermList
+		| (PositiveExpr) StartExpr Term TermList;
+		
+		
+StartExpr ::= (StartExpr) /* epsilon */;
+		
+
+TermList ::= (TermsList) TermList Addop Term
+			| (NoTerm) /* epsilon */;
+			
+
+Term ::= (Term) Factor FactorList;
+
+
+FactorList ::= (FactorsList) FactorList Mulop Factor
+			| (NoFactor) /* epsilon */;
+			
+			
+Factor ::= (NumberFactor) NUMBER
+			| (CharFactor) CHAR
+			| (SubExprFactor) LEFT_PAREN Expr:e RIGHT_PAREN
+			| (BoolFactor) BOOL
+			| (DesignatorFactor) Designator
+			| (ArrayFactor) NEW Type LEFT_BRACKET Expr:e RIGHT_BRACKET
+			| (ClassFactor) NEW Type LEFT_PAREN ActPars RIGHT_PAREN
+			| (FuncFactor) FuncCallStart ActPars RIGHT_PAREN;
+			
+			
+FuncCallStart ::= (FuncCallStart) Designator LEFT_PAREN;
+
+			
+Designator ::= (Designator) DesignatorName DesignatorExtension;
+			
+			
+DesignatorName ::= (ScopeDesignatorName) IDENT:scopeName DOUBLE_COLON IDENT:name
+				|  (NoScopeDesignatorName) IDENT:name;
+			
+		
+DesignatorExtension ::= (DesignatorExtensions) DesignatorExtension SingleDesignatorExtension
+					| (NoDesignatorExtension) /* epsilon */;
+					
+					
+SingleDesignatorExtension ::= (SingleDesignatorExtensionClassField) DOT IDENT:fieldName
+							| (SingleDesignatorExtensionArray) LEFT_BRACKET Expr RIGHT_BRACKET;
+
+	
+Addop ::= (Addition) PLUS
+		| (Subtraction) MINUS;
+		
+		
+Mulop ::= (Multiplication) ASTERISK
+		| (Division) SLASH
+		| (Moduo) PERCENT;
+		
+
+ActPars ::= (ActParams) ActParsList
+		| (NoActPars) /* epsilon */;
+		
+		
+ActParsList ::= (ActParamsList) ActParsList COMMA OneActPar
+				| (OneActParam) OneActPar;
+
+
+OneActPar ::= (OneActPar) Expr;
+
+
+ManyDesignators ::= (ManyDes) DesignatorList COMMA
+				| (NoManyDesignators) /* epsilon */;
+				
+				
+DesignatorList ::= (DesignatorsList) DesignatorList COMMA SingleDesignator
+					| (SingleDes) SingleDesignator;
+					
+			
+SingleDesignator ::= (Des) Designator
+					| (NoDesignator) /* epsilon */;
+					
+					
+ForStatement ::= (ForStmt) DesignatorStatementList
+				| (NoForStatement) /* epsilon */;
+					
+					
+DesignatorStatementList ::= (DesignatorStmtList) DesignatorStatementList COMMA DesignatorStatement
+						| (SingleDesignatorStmt) DesignatorStatement;
+						
+						
+Condition ::= (Condition) CondTerm CondTermList;
+
+
+CondTermList ::= (CondTerms) CondTermList LOGICAL_OR CondTerm
+				| (NoCondTerms) /* epsilon */;
+				
+				
+CondTerm ::= (CondTerm) CondFact CondFactList;
+
+
+CondFactList ::= (CondFacts) CondFactList LOGICAL_AND CondFact
+				| (NoCondFacts) /* epsilon */;
+				
+				
+CondFact ::= (CondFactRelop) Expr:e1 Relop Expr:e2
+			| (CondFactNoRelop) Expr;
+			
+			
+Relop ::= (LogEq) LOGICAL_EQUALS
+		| (LogNotEq) LOGICAL_NOT_EQUALS
+		| (Grt) GREATER
+		| (Gre) GREATER_OR_EQUALS
+		| (Lss) LESS
+		| (Lse) LESS_OR_EQUALS;
+		
+		
+		
+StaticVarDeclList ::= (StaticVarDeclarations) StaticVarDeclList StaticVarDecl
+					| (NoStaticVarDeclaration) /* epsilon */;
+					
+	
+StaticVarDeclStart ::= (StaticVarDeclStart) STATIC;
+
+
+StaticVarDecl ::= (StaticVarDecl) StaticVarDeclStart VarDecl;
+					
+					
+StaticInitializerStart ::= (StaticInitList) StaticInitializerList
+						| (NoStaticInitList) /* epsilon */;
+					
+					
+StaticInitializerList ::= (StaticInitializers) StaticInitializerList StaticInitializer
+						| (NoStaticInitializer) StaticInitializer;
+						
+						
+StaticInitializer ::= (StaticInitializer) OneStaticInitializerStart StatementList RIGHT_BRACE;
+
+
+OneStaticInitializerStart ::= (OneStaticInitializerStart) STATIC LEFT_BRACE;
+
+
+ClassMethodsList ::= (ClassMethods) LEFT_BRACE MethodDeclList RIGHT_BRACE
+					| (NoClassMethods) /* epsilon */;
