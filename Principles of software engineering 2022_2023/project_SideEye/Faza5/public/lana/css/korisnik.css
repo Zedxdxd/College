@@ -1,0 +1,43 @@
+.background{
+  background: url("../../images/bgprava.jpg");
+}
+
+.forma{
+  position: relative;
+  background-color: aliceblue;
+  width: 600px;
+  height: 400px;
+  margin-left: 200px;
+  margin-top: 100px;
+
+}
+.container{
+  justify-content: center;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.polje{
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 100px;
+  
+}
+.dugme-sacuvaj{
+  position: absolute;
+  margin-top: 250px;
+}
+.ime{
+ border-color: rgb(87, 234, 234); border-style: dashed; border-width:2px;
+}
+
+.row{
+  display: flex;
+}
+
+.kol{
+  width: "20px";
+  height:"100px";
+  background-color: brown;
+}
+
