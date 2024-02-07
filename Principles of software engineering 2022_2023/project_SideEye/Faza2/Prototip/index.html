@@ -1,0 +1,320 @@
+<!--Milica Cvetković-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <title>ePutuj</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <link rel="stylesheet" href="milica/css/bootstrap.min.css">
+   <link rel="stylesheet" href="milica/css/style.css">
+   <link rel="stylesheet" href="milica/css/responsive.css">
+   <link rel="icon" href="images/fevicon.png" type="image/gif" />
+   <link rel="stylesheet" href="milica/css/jquery.mCustomScrollbar.min.css">
+   <link rel="stylesheet" href="milica/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="milica/css/owl.theme.default.min.css">
+</head>
+
+<body class="main-layout">
+   <header>
+      <div class="header">
+         <div class="header_white_section">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="header_information">
+                        <table>
+                           <tr>
+                              <td style="width:35%"><img src="images/1.png" alt="#" /> Bulevar Kralja Aleksandra 73,
+                                 Beograd &nbsp;&nbsp;&nbsp;</td>
+
+                              <td style="width:20%"><img src="images/2.png" alt="#" /> +381 65 432 1010
+                                 &nbsp;&nbsp;&nbsp;</td>
+
+                              <td style="width:20%"><img src="images/3.png" alt="#" />
+                                 eputuj@gmail.com&nbsp;&nbsp;&nbsp;</td>
+
+                              <td style="width:25%; padding-right: 10px;" align="right"><a href="login.html"><img
+                                       src="images/Adobe_Express_20230318_1713500_1.png"
+                                       style="height:15% ;width:15%" />Uloguj se</a> </td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                  <div class="full">
+                     <div class="center-desk">
+                        <div class="logo"> <a href="index.html"><img src="images/logo.jpeg" alt="#"></a> </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                  <div class="menu-area">
+                     <div class="limit-box">
+                        <nav class="main-menu">
+                           <ul class="menu-area-main">
+                              <li class="active"> <a href="#">Početna</a> </li>
+                              <li> <a href="#about">O nama</a> </li>
+                              <li><a href="#offers">Ponude</a></li>
+                              <li><a href="#contact">Kontakt</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <section>
+      <div class="banner-main">
+         <img src="images/pinksky.jpg" alt="#" style="width:100%;" />
+         <div class="container">
+            <div class="text-bg">
+               <div class="container">
+                  <form class="main-form">
+                     <h3>Pretraži ponudu</h3>
+                     <div class="row">
+                        <div class="col-md-9">
+                           <div class="row">
+                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                                 <label>Prevozno sredstvo</label>
+                                 <select class="form-control" name="Any">
+                                    <option>Automobil</option>
+                                    <option>Autobus</option>
+                                    <option>Brod</option>
+                                 </select>
+                              </div>
+                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                                 <label>Mesto do</label>
+                                 <select class="form-control" name="Any">
+                                    <option>Subotica</option>
+                                    <option>Beograd</option>
+                                    <option>Novi Sad</option>
+                                    <option>Niš</option>
+                                 </select>
+                              </div>
+                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                                 <label>Mesto od</label>
+                                 <select class="form-control" name="Any">
+                                    <option>Subotica</option>
+                                    <option>Beograd</option>
+                                    <option>Novi Sad</option>
+                                    <option>Niš</option>
+                                 </select>
+                              </div>
+                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                                 <label>Minimalna cena</label>
+                                 <input class="form-control" placeholder="0" type="text" name="00.0">
+                              </div>
+                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                                 <label>Maksimalna cena</label>
+                                 <input class="form-control" placeholder="0" type="text" name="00.0">
+                              </div>
+                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                                 <label> Broj putnika</label>
+                                 <input class="form-control" placeholder="0" type="text" name="00.0">
+                              </div>
+                              <div class="col-xl-3 col-lg-4 col-md-3 col-sm-6 col-12">
+                                 <label>Datum do</label>
+                                 <input class="form-control" placeholder="Any" type="date" name="Any">
+                              </div>
+                              <div class="col-xl-3 col-lg-4 col-md-3 col-sm-6 col-12">
+                                 <label>Datum od</label>
+                                 <input class="form-control" placeholder="Any" type="date" name="Any">
+                              </div>
+                              <div class="col-xl-3 col-lg-4 col-md-3 col-sm-6 col-12">
+                                 <label>Vreme do</label>
+                                 <input class="form-control" placeholder="Any" type="time" name="Any">
+                              </div>
+                              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                                 <label>Vreme od</label>
+                                 <input class="form-control" placeholder="Any" type="time" name="Any">
+                              </div>
+
+
+                           </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                           <a href="pregled_ponuda_gost.html" style="background-color: rgb(6, 47, 60);">Pretraži</a>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <div id="about" class="about">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 ">
+               <div class="titlepage">
+                  <h2 id="onama">O nama</h2>
+                  <span> </span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="bg">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                  <div class="about-box">
+                     <p> <span>ePutuj je najveća svetska zajednica za deljenje prevoza koja povezuje putnike i vozače
+                           koji putuju u istom smeru i omogućava im da podele putne troškove. Prosečna razdaljina između
+                           dve destinacije na kojoj se deli prevoz iznosi oko 340 km.
+                           Razlog zbog kog naši članovi koriste ePutuj je da podele troškove. Upravo zbog toga, naš
+                           servis nema za cilj da omogući vozačima da zarade od putovanja.
+                        </span></p>
+                     <div class="palne-img-area">
+                        <img src="images/plane-img.png" alt="images">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div class="justify-content-center">
+         <a href="#contact" style="background-color: rgb(63, 155, 183); ">Pročitaj više</a>
+
+      </div>
+   </div>
+   <div id="offers" class="traveling">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 ">
+               <div class="titlepage">
+                  <h2>Opcije za putovanja</h2>
+                  <span>Sa nama putujte raznim prevoznim sredstvima, a očekuju vas i brojne nagrade!</span>
+               </div>
+            </div>
+         </div>
+         <div class="row justify-content-center">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+               <div class="traveling-box">
+                  <i><img src="lana/icon/travel-icon.png" alt="icon" /></i>
+                  <h3>Putuj autom</h3>
+                  <p>Ugodne vožnje automobilom</p>
+                  <br/>
+                  <div class="read-more">
+                     
+                     <a href="pregled_ponuda_gost.html"> Pročitaj više</a>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+               <div class="traveling-box">
+                  <i><img src="lana/icon/travel-icon3.png" alt="icon" /></i>
+                  <h3>Putuj autobusom</h3>
+                  <p> Planiraj putovanje sa društvom, bus ponude su tu!</p>
+                  <div class="read-more">
+                     <a href="pregled_ponuda_gost.html">Pročitaj više</a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 ">
+               <div class="traveling-box">
+                  <i><img src="lana/icon/travel-icon4.png" alt="icon" /></i>
+                  <h3>Putuj brodom</h3>
+                  <p> Letnje avanture, na otvorenom moru!</p>
+                  <div class="read-more">
+                     <a href="pregled_ponuda_gost.html">Pročitaj više</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <footer>
+      <div id="contact" class="footer">
+         <div class="container">
+            <div class="row pdn-top-30">
+
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12" style="color:#004043">
+                  <div class="Follow">
+                     <h3>Kontakt:</h3>
+                     <span>Bulevar Kralja Aleksandra 73, <br>Palilula,<br>
+                        Beograd<br>
+                        +381 65 432 1010</span>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="Follow">
+                     <h3>Prečice:</h3>
+                     <ul class="link">
+                        <li> <a href="#onama">O nama</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                  <form>
+                     <div class="Follow">
+                        <h3>Ostavite komentar:</h3>
+
+                        <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                              <input class="Newsletter" placeholder="Name" type="text">
+                           </div>
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                              <input class="Newsletter" placeholder="Email" type="text">
+                           </div>
+                           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                              <textarea class="textarea" placeholder="Komentar" type="text"></textarea>
+                           </div>
+                        </div>
+                        <a href="#contact"></a><button class="Subscribe">Pošalji</button></a>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <script src="js/plugin.js"></script>
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/custom.js"></script>
+   <script src="js/owl.carousel.js"></script>
+   <script>
+      $(document).ready(function () {
+         var owl = $('.owl-carousel');
+         owl.owlCarousel({
+            margin: 10,
+            nav: true,
+            loop: true,
+            responsive: {
+               0: {
+                  items: 1
+               },
+               600: {
+                  items: 2
+               },
+               1000: {
+                  items: 3
+               }
+            }
+         })
+      })
+   </script>
+
+</body>
+
+</html>

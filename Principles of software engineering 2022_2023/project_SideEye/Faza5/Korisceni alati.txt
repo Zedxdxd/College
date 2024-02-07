@@ -1,0 +1,27 @@
+-Za prototip: 
+HTML 5
+CSS 3
+JQuery  3.3.1
+Bootstrap 5.1
+
+-Za modelovanje baze podataka:
+*Korisceni jezik:SQL
+MySQL Workbench
+erwin Data Modeler 12.1
+
+-Za implementaciju: 
+*Korisceni jezik:PHP 8.1.0
+Codeigniter 4
+Visal Studio Code
+Netbeans
+wamp
+xampp
+
+-Za modelovanje veb aplikacije: 
+*Korisceni jezik:UML 
+starUML
+
+-Za testiranje: 
+Selenium IDE
+Selenium Web Driver
+Php Unit

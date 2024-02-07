@@ -1,0 +1,762 @@
+{
+  "id": "c4c0dd02-a9e5-44c7-a3ea-fe8496baa57f",
+  "version": "2.0",
+  "name": "admin_testiranje",
+  "url": "http://localhost:8080/AdminController/index",
+  "tests": [{
+    "id": "11650330-34c9-4de6-b8e0-b81f0ef4881a",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "b7dde4d2-e569-43d8-a860-ad11eb1bef60",
+    "name": "T1_Prinudno_brisanja_naloga_korisnika_Pregled_informacija_o_nalogu",
+    "commands": [{
+      "id": "e492c583-d7eb-4dcb-8827-0ce3c0a1d22e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/AdminController/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e188d86b-18ed-4eb5-8c18-9f9f8462d59d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bce019e4-dd0a-4dc4-9091-b355031f2e97",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ukloni nalog 1",
+      "targets": [
+        ["linkText=Ukloni nalog 1", "linkText"],
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[@href='http://localhost:8080/AdminController/ukloniNalog']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ukloni nalog 1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8df84207-742c-4d5f-b640-3fbe5d36fb82",
+      "comment": "",
+      "command": "click",
+      "target": "css=a > .dugme",
+      "targets": [
+        ["css=a > .dugme", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pregledaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c8c6fd2-8dcc-4515-9fcf-fd3543518010",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(2) > .dugme",
+      "targets": [
+        ["css=a:nth-child(2) > .dugme", "css:finder"],
+        ["xpath=//div[2]/a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Detalji o nalogu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5748a56-b45d-46c1-89ef-9a5c82942c35",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h2 > strong",
+      "targets": [
+        ["css=h2 > strong", "css:finder"],
+        ["xpath=//h2/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Informacije o korisničkom nalogu')]", "xpath:innerText"]
+      ],
+      "value": "Informacije o korisničkom nalogu"
+    }, {
+      "id": "26aabcad-1108-410d-8066-e13551f4d17a",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(2) > .dugme",
+      "targets": [
+        ["css=a:nth-child(2) > .dugme", "css:finder"],
+        ["xpath=//div[2]/a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'<< Nazad')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ce612ea-ab8b-4ff7-8820-70a884e2b617",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h2 > strong",
+      "targets": [
+        ["css=h2 > strong", "css:finder"],
+        ["xpath=//h2/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Obaveštenje')]", "xpath:innerText"]
+      ],
+      "value": "Obaveštenje"
+    }]
+  }, {
+    "id": "7dc2e491-9d20-4fe8-9f18-f2c145e6d31f",
+    "name": "T2_Prinudno_brisanja_naloga_korisnika_Upozori_korisnika",
+    "commands": [{
+      "id": "53245ddc-497c-4b5f-a4e1-c5d20648de30",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/AdminController/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "677ddc3b-40ad-4e62-bd78-396f498ea85f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "62dfc43c-0981-42d4-870b-bd21833c2cef",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ukloni nalog 1",
+      "targets": [
+        ["linkText=Ukloni nalog 1", "linkText"],
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[@href='http://localhost:8080/AdminController/ukloniNalog']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ukloni nalog 1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "18dec29a-0f6e-4e50-a974-87620825ec52",
+      "comment": "",
+      "command": "click",
+      "target": "css=a > .dugme",
+      "targets": [
+        ["css=a > .dugme", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pregledaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d992cb58-8896-4bcc-a24f-30869d0b2a78",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h2 > strong",
+      "targets": [
+        ["css=h2 > strong", "css:finder"],
+        ["xpath=//h2/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Obaveštenje')]", "xpath:innerText"]
+      ],
+      "value": "Obaveštenje"
+    }, {
+      "id": "e5a0809a-2b58-4e38-910c-8411c87e7811",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(3) > .dugme",
+      "targets": [
+        ["css=a:nth-child(3) > .dugme", "css:finder"],
+        ["xpath=//a[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Upozori')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b892a5c-2e9e-4e57-aaaa-e741c920ae2f",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=h2>strong",
+      "targets": [
+        ["css=.col-sm:nth-child(2)", "css:finder"],
+        ["xpath=//section/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "31f40e69-036f-4e1f-807c-fb95ab644184",
+    "name": "T3_Prinudno_brisanje_naloga_korisnika_Brisanje_korisnika",
+    "commands": [{
+      "id": "4a8dd0d0-ed30-4b94-969d-dd71ad11ebd5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/AdminController/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dccc7d63-b4fd-49d1-a7b4-c18342ed0520",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "93e6c03b-d835-4401-b148-7011a2eec869",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ukloni nalog 1",
+      "targets": [
+        ["linkText=Ukloni nalog 1", "linkText"],
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[@href='http://localhost:8080/AdminController/ukloniNalog']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ukloni nalog 1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c88bd83-d1a7-481d-b1ed-ef849eb0d019",
+      "comment": "",
+      "command": "click",
+      "target": "css=a > .dugme",
+      "targets": [
+        ["css=a > .dugme", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pregledaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d75c311-5183-4e67-9e01-ae76e4a2f7d2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h2 > strong",
+      "targets": [
+        ["css=h2 > strong", "css:finder"],
+        ["xpath=//h2/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Obaveštenje')]", "xpath:innerText"]
+      ],
+      "value": "Obaveštenje"
+    }, {
+      "id": "c34da28f-fcb1-4378-9490-5dcb2811c31e",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(4) > .dugme",
+      "targets": [
+        ["css=a:nth-child(4) > .dugme", "css:finder"],
+        ["xpath=//a[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ukloni nalog')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e86fc3d-7642-4be5-8cb5-82a5108127e5",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "46ab0349-214d-4142-9ec2-4cda0f4ac873",
+    "name": "T4_Dodavanje_mesta_uspesno",
+    "commands": [{
+      "id": "bae9980f-5bb1-4b9d-9200-f2b1e7140c77",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/AdminController/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f3c983a6-a1f9-48b1-8985-3ad9c77ff299",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "58e50849-d446-4c36-a583-e93fc016b4c5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj mesto",
+      "targets": [
+        ["linkText=Dodaj mesto", "linkText"],
+        ["css=li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj mesto')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/AdminController/dodajMesto']", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dodaj mesto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "89b57d9a-ab7e-4380-8438-c3022a1ee6fb",
+      "comment": "",
+      "command": "click",
+      "target": "name=mesto",
+      "targets": [
+        ["name=mesto", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='mesto']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28ddf732-7178-420e-afae-fab262965853",
+      "comment": "",
+      "command": "type",
+      "target": "name=mesto",
+      "targets": [
+        ["name=mesto", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='mesto']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "New York"
+    }, {
+      "id": "087aad57-0cd4-4a26-91fb-7656995d27a7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dugme:nth-child(8)",
+      "targets": [
+        ["css=.dugme:nth-child(8)", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Potvrdi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1f4e618-bfd6-4771-b8af-59f7587276cb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(4)",
+      "targets": [
+        ["css=p:nth-child(4)", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Uspešno dodato mesto!')]", "xpath:innerText"]
+      ],
+      "value": "Uspešno dodato mesto!"
+    }]
+  }, {
+    "id": "630eaee4-9af0-4fcf-b9c0-b45393c93a60",
+    "name": "T5_Dodavanje_mesta_neuspesno",
+    "commands": [{
+      "id": "ed3a8baa-c47a-434f-b924-b8e024fb3cbf",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/AdminController/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "68488ff6-53a0-44de-9486-8197eaeb0bf5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6f8e7c7b-98c4-45cd-98d3-9f851591d73d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj mesto",
+      "targets": [
+        ["linkText=Dodaj mesto", "linkText"],
+        ["css=li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj mesto')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/AdminController/dodajMesto']", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dodaj mesto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f0be228-2e1f-4bef-aa08-73e550163729",
+      "comment": "",
+      "command": "click",
+      "target": "name=mesto",
+      "targets": [
+        ["name=mesto", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='mesto']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43d4a820-b4f1-485c-b80e-2c944838a6c8",
+      "comment": "",
+      "command": "type",
+      "target": "name=mesto",
+      "targets": [
+        ["name=mesto", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='mesto']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "New York"
+    }, {
+      "id": "bd09c9fc-3817-4773-96b8-6402ec9425a7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dugme:nth-child(8)",
+      "targets": [
+        ["css=.dugme:nth-child(8)", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Potvrdi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c264ffd3-508d-4a7c-b5a3-024a8ee3d88f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(5)",
+      "targets": [
+        ["css=p:nth-child(5)", "css:finder"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Mesto već postoji!')]", "xpath:innerText"]
+      ],
+      "value": "Mesto već postoji!"
+    }]
+  }, {
+    "id": "53754c6a-6914-485a-bd85-39c9b725d783",
+    "name": "T6_Odobrena_registracija",
+    "commands": [{
+      "id": "46476e1e-1077-4db1-a782-3024ef184367",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/AdminController/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d1393e63-c438-4194-9c71-ba992505a566",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b7830476-3cd3-45f5-9315-9085d6d87346",
+      "comment": "",
+      "command": "click",
+      "target": "css=a > .dugme",
+      "targets": [
+        ["css=a > .dugme", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pregledaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "062a3fd1-ad2c-447f-b3b8-0722bc725483",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h2 > strong",
+      "targets": [
+        ["css=h2 > strong", "css:finder"],
+        ["xpath=//h2/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Informacije o korisničkom nalogu')]", "xpath:innerText"]
+      ],
+      "value": "Informacije o korisničkom nalogu"
+    }, {
+      "id": "8c77fda9-c9a6-4199-915b-707dd63c2850",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(2) > .dugme",
+      "targets": [
+        ["css=a:nth-child(2) > .dugme", "css:finder"],
+        ["xpath=//div[2]/a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Potvrdi kreiranje')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b32a289-2f92-4606-9e85-a6bca072d155",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=h2>strong",
+      "targets": [
+        ["css=.col:nth-child(2)", "css:finder"],
+        ["xpath=//section/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "9ff76983-22d9-425d-aad8-8af74e861508",
+    "name": "T7_Odbijena_registracija",
+    "commands": [{
+      "id": "f2aed7f0-c7e5-4df5-bef9-a94e1c560c88",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/AdminController/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "022b4ed3-4556-409a-b641-b549360cda9c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "93d34dec-3237-41d2-971d-38302550d9bf",
+      "comment": "",
+      "command": "click",
+      "target": "css=a > .dugme",
+      "targets": [
+        ["css=a > .dugme", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pregledaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e62aa44f-d3f8-435b-a247-a5b8450bd48b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h2 > strong",
+      "targets": [
+        ["css=h2 > strong", "css:finder"],
+        ["xpath=//h2/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Informacije o korisničkom nalogu')]", "xpath:innerText"]
+      ],
+      "value": "Informacije o korisničkom nalogu"
+    }, {
+      "id": "f3f45ab2-0ec4-499b-a384-4d80c016a340",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(3) > .dugme",
+      "targets": [
+        ["css=a:nth-child(3) > .dugme", "css:finder"],
+        ["xpath=//a[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Odbij kreiranje')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "65ae741c-cd08-4ba3-a688-a83fd2a5b0c0",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=h2 > strong",
+      "targets": [
+        ["css=.col:nth-child(2)", "css:finder"],
+        ["xpath=//section/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d8cbe7f6-b38d-4b73-a2d0-01e47cf9fa60",
+    "name": "T8_Brisanje_naloga_odobreno",
+    "commands": [{
+      "id": "93642ae1-91e9-4569-907b-4d4f7cf60991",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/AdminController/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3cfd3042-888c-48ba-a729-9e937f7d2ade",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5fa58734-a1f6-4303-97cb-cf6a9ad96cf9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ukloni nalog 2",
+      "targets": [
+        ["linkText=Ukloni nalog 2", "linkText"],
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[@href='http://localhost:8080/AdminController/ukloniNalog']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ukloni nalog 2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e30e0e96-58c5-402b-9e98-b369d7683337",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//h4[contains(.,'Zahtev za brisanje korisničkog naloga')]",
+      "targets": [
+        ["css=tr:nth-child(1) h4", "css:finder"],
+        ["xpath=//h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'Zahtev za brisanje korisničkog naloga trivic123.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0cd2c560-57ad-4097-90f7-86ffcf61a1e7",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) div .dugme",
+      "targets": [
+        ["css=tr:nth-child(1) div .dugme", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pregledaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "334434d7-ecbf-4562-8f4f-ec36344a58ed",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h2 > strong",
+      "targets": [
+        ["css=h2 > strong", "css:finder"],
+        ["xpath=//h2/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Informacije o korisničkom nalogu')]", "xpath:innerText"]
+      ],
+      "value": "Informacije o korisničkom nalogu"
+    }, {
+      "id": "b846465b-0816-4084-bdae-337d0a0f1167",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(2) > .dugme",
+      "targets": [
+        ["css=a:nth-child(2) > .dugme", "css:finder"],
+        ["xpath=//div[2]/a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Potvrdi brisanje')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "99d993e4-50a5-42d2-b584-7b7dc883c07e",
+    "name": "T9_Brisanje_naloga_odbijeno",
+    "commands": [{
+      "id": "c72ac9f4-47e1-4167-b927-53e2e1c8c685",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/AdminController/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a59dcf0b-1894-451a-ab64-410cec724e70",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "220959d1-6d36-4fdd-90dd-a9eecb19744f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ukloni nalog 2",
+      "targets": [
+        ["linkText=Ukloni nalog 2", "linkText"],
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[@href='http://localhost:8080/AdminController/ukloniNalog']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ukloni nalog 2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6e66a352-3f42-451a-8fe8-2d3eeeaef0e9",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//h4[contains(.,'Zahtev za brisanje korisničkog naloga')]",
+      "targets": [
+        ["css=tr:nth-child(1) h4", "css:finder"],
+        ["xpath=//h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'Zahtev za brisanje korisničkog naloga trivic123.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4c75c138-7cfa-446b-8418-b32a279ece2a",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) div .dugme",
+      "targets": [
+        ["css=tr:nth-child(1) div .dugme", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pregledaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f312aa4a-6396-4f78-9350-a7c61fec18ab",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h2 > strong",
+      "targets": [
+        ["css=h2 > strong", "css:finder"],
+        ["xpath=//h2/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Informacije o korisničkom nalogu')]", "xpath:innerText"]
+      ],
+      "value": "Informacije o korisničkom nalogu"
+    }, {
+      "id": "eb04cf7f-2fdf-4d13-8f16-b823cb94adef",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(3) > .dugme",
+      "targets": [
+        ["css=a:nth-child(3) > .dugme", "css:finder"],
+        ["xpath=//a[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Odbij brisanje')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "23ddb5be-972a-4948-90c3-81581f60da20",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=h2 > strong",
+      "targets": [
+        ["css=.col-sm:nth-child(2)", "css:finder"],
+        ["xpath=//section/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "74c98984-cbc5-4530-b205-fe58faaec519",
+    "name": "T10_Dodavanje_mesta_neuspesno_prazno",
+    "commands": [{
+      "id": "eb178fe0-4018-4bb2-90c4-fbefa33432aa",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/AdminController/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8f52594e-ba1e-4254-b97b-9510218dbcff",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "78b4c2c2-6d2a-43c4-bf21-37712f2b4806",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj mesto",
+      "targets": [
+        ["linkText=Dodaj mesto", "linkText"],
+        ["css=li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj mesto')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/AdminController/dodajMesto']", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dodaj mesto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a128bbc1-a2ca-4b37-a234-eea716e83558",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dugme:nth-child(8)",
+      "targets": [
+        ["css=.dugme:nth-child(8)", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Potvrdi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3bc84972-21c4-43ea-9b04-cffa3f49a64b",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(5)",
+      "targets": [
+        ["css=p:nth-child(5)", "css:finder"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Niste uneli naziv mesta!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "22f9b776-0a55-4b77-92c1-666b1edc9f97",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(5)",
+      "targets": [
+        ["css=p:nth-child(5)", "css:finder"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Niste uneli naziv mesta!')]", "xpath:innerText"]
+      ],
+      "value": "Niste uneli naziv mesta!"
+    }]
+  }],
+  "suites": [{
+    "id": "d87e75bc-ac3c-44ef-82e9-f859fe194a6a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["11650330-34c9-4de6-b8e0-b81f0ef4881a"]
+  }, {
+    "id": "7e7d125d-0431-4cdb-bd45-5eb2d41be4bc",
+    "name": "Admin",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["b7dde4d2-e569-43d8-a860-ad11eb1bef60", "7dc2e491-9d20-4fe8-9f18-f2c145e6d31f", "31f40e69-036f-4e1f-807c-fb95ab644184", "630eaee4-9af0-4fcf-b9c0-b45393c93a60", "46ab0349-214d-4142-9ec2-4cda0f4ac873", "53754c6a-6914-485a-bd85-39c9b725d783", "9ff76983-22d9-425d-aad8-8af74e861508"]
+  }],
+  "urls": ["http://localhost:8080/AdminController/index"],
+  "plugins": []
+}
