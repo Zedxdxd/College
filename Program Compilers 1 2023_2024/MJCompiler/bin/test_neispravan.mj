@@ -1,0 +1,84 @@
+//Test 303
+
+program test_303
+namespace General {
+	int jedan;
+	{}
+}
+
+int pet;
+
+class Animal {
+	static int i;
+	static {
+		print('A');print('n');print('i');print('m');print('a');print('l');print(eol);
+		General::jedan = 1;
+		pet = 5;
+		i = 123;
+	}
+	int age;
+	{
+		void makeSound(){
+			break;
+		}
+		
+		void setAge(int age){
+			this.age = age;
+		}
+		
+		int getAge(){
+			return;
+			return age;
+		}
+	}
+}
+
+class Dog extends Animal {
+
+	{
+		void makeSound(){
+			print('a', 2); print('w');
+			print('a'); print('w');
+		}
+	}
+}
+
+class Cat extends Animal {
+	
+	{
+		void makeSound(){
+			print('m', 2);print('e');print('o');print('w');
+		}
+	}
+}
+
+{
+	int factorial(int n){
+		print(n1);
+		if (n < 2){
+			return 1;
+		}
+		return n * factorial(n - 1);
+	}
+		
+	void main() Animal cat, dog; int num;{
+		print(A.i);
+		cat = new Cat();
+		cat.setAge(4);
+		cat.makeSound();
+		print(cat.getAge());
+		print(eol);
+		dog = new Dog();
+		dog.setAge(15);
+		dog.makeSound();
+		print(dog.getAge());
+		print(eol);
+		read(num);
+		print('F');print('a');print('k');print('t');print('o');
+		print('r');print('i');print('j');print('e');print('l');
+		print(' ');print('o');print('d');print(num, 2);print(' ');
+		print('j');print('e');print(factorial(num), 5); 
+		
+		for (i = 0;i < 0;) {print('x');}
+	}
+}
