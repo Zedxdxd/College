@@ -1,0 +1,61 @@
+<app-header></app-header>
+<div class="container mt-5">
+<div class="card">
+  <div class="card-header">
+      <h3 class="text-center">Resetovanje lozinke</h3>
+  </div>
+  <div class="card-body">
+    <!-- Korisnicko ime -->
+    <div class="form-group">
+    <label for="username">Korisnicko ime:</label>
+    <input type="text" [(ngModel)]="korime" class="form-control" id="username" placeholder="Unesite korisnicko ime...">
+        <div class="greska">{{greskaKorime}}</div>
+    </div>
+    <!-- Otvori pitanje -->
+    <div class="centrirano" style="margin-top: 15px;">
+      <button (click)="otvoriPitanje()" class="btn btn-success btn-block">Otvori bezbednosno pitanje</button>
+    </div>
+    <span *ngIf="korisnik.korime != '' ">
+      <!-- Pitanje -->
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="pitanje">Bezbednosno pitanje:</label>
+        <input type="text" [value]="korisnik.pitanje" class="form-control" id="pitanje" disabled>
+      </div>
+      <!-- Odgovor -->
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="odgovor">Odgovor:</label>
+        <input type="text" [(ngModel)]="odgovor" class="form-control" id="odgovor" placeholder="Odgovor...">
+        <div class="greska">{{greskaOdgovor}}</div>
+      </div>
+      <!-- Daj odgovor -->
+      <div class="centrirano" style="margin-top: 15px;" *ngIf=" korisnik.korime != '' ">
+        <button (click)="dajOdgovor()" class="btn btn-success btn-block">Posalji odgovor</button>
+      </div>
+    </span>
+    <span *ngIf="tacanOdgovor">
+      <!-- lozinka -->
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="password">Nova lozinka:</label>
+        <input type="password" [(ngModel)]="lozinka" class="form-control" id="password" placeholder="Unesite novu lozinku...">
+        <div class="greska">{{greskaLozinka}}</div>
+      </div>
+      <!-- ponovljena lozinka -->
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="repeatedPassword">Ponovljena nova lozinka:</label>
+        <input type="password" [(ngModel)]="ponovljenaLozinka" class="form-control" id="repeatedPassword" placeholder="Unesite ponovo novu lozinku....">
+        <div class="greska">{{greskaPonovljenaLozinka}}</div>
+      </div>
+      <!-- promeni lozinku -->
+      <div class="centrirano" style="color: green;">{{promenaUspeh}}&nbsp;&nbsp;
+        <div class="spinner-border spinner-border-sm centrirano" role="status" *ngIf="promenaUspeh != '' ">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <div class="greska centrirano">{{promenaGreska}}</div>
+      <div class="centrirano" style="margin-top: 15px;">
+        <button (click)="promeniLozinku()" class="btn btn-success btn-block">Promeni lozinku</button>
+      </div>
+    </span>
+  </div>
+</div>
+</div>

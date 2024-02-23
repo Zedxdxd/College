@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="container mt-5" style="min-height: 100vh;">
+  <div class="card">
+    <div class="card-header">
+        <h3 class="text-center">Ulogujte se!</h3>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="username">Korisnicko ime:</label>
+        <input type="text" [(ngModel)]="korime" class="form-control" id="username" placeholder="Unesite korisnicko ime...">
+      </div>
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="password">Lozinka:</label>
+        <input type="password" [(ngModel)]="lozinka" class="form-control" id="password" placeholder="Unesite lozinku">
+      </div>
+      <div class="centrirano greska">{{greskaLogin}}</div>
+      <div class="centrirano" style="margin-top: 15px;">
+        <button (click)="login()" class="btn btn-success btn-block">Ulogujte se</button>
+      </div>
+    </div>
+  </div>
+</div>

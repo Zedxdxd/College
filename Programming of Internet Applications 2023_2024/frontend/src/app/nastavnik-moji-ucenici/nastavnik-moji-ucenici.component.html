@@ -1,0 +1,104 @@
+<app-header></app-header>
+<div class="container" style="margin-top: 15px; min-height: 100vh;">
+
+  <!-- Ucenici -->
+  <div class="row table-responsive">
+    <h3>Podaci o ucenicima</h3>
+    <p *ngIf="mapaUcenici.size == 0">Niste nijednom uceniku odrzali cas</p>
+    <table class="table table-warning table-striped table-bordered" style="text-align: center;" *ngIf="mapaUcenici.size > 0">
+      <thead>
+        <tr>
+          <th>Ime</th>
+          <th>Prezime</th>
+          <th>Adresa</th>
+          <th>Email</th>
+          <th>Telefon</th>
+          <th>Tip skole</th>
+          <th>Razred</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pair of mapaUcenici | keyvalue" (click)="selektuj(pair.value)" [class.selektovan]="pair.value.korime == selektovanUcenik.korime">
+          <td>{{pair.value.ime}}</td>
+          <td>{{pair.value.prezime}}</td>
+          <td>{{pair.value.adresa}}</td>
+          <td>{{pair.value.email}}</td>
+          <td>{{pair.value.telefon}}</td>
+          <td>{{pair.value.tipSkole | tipSkole}}</td>
+          <td>{{pair.value.razred}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row" #scrollTarget>
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Dosije ucenika {{selektovanUcenik.ime}} {{selektovanUcenik.prezime}}</h3>
+        </div>
+        <div class="card-body centrirano" *ngIf="selektovanUcenik.korime == ''">
+          Nije izabran nijedan ucenik. Selektujte ucenika ciji dosije zelite da pregledate.
+        </div>
+        <div class="card-body" *ngIf="selektovanUcenik.korime != ''">
+          <div class="row table-responsive">
+            <table class="table table-warning table-striped table-bordered align-middle" style="text-align: center;">
+              <thead>
+                <tr>
+                  <th>Predmet</th>
+                  <th>Datum</th>
+                  <th>Opis</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let c of ucenikCasovi">
+                  <td>{{c.predmet}}</td>
+                  <td>{{c.start | date:"dd.MM.yyyy HH:mm"}}</td>
+                  <td>{{c.opis == '' ? '/' : c.opis}}</td>
+                  <td><button class="btn btn-success" (click)="formaOceniUcenika(c)" *ngIf="c.ocenaZaUcenika == 0">Oceni ucenika</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #modalOcena let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">Ocena ucenika</h5>
+    <button type="btn btn-danger" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label><b>Ucenik</b> {{selektovanCas.ucenik.ime}} {{selektovanCas.ucenik.prezime}}</label>
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+      <label for="opis">Komentar za ucenika:</label>
+      <input type="text" [(ngModel)]="selektovanCas.komentarZaUcenika" class="form-control" id="opis" placeholder="Unesite komentar...">
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+      <label style="font-size: 20px;">Ocena: &nbsp;&nbsp;</label>
+
+      <ngb-rating [(rate)]="ocena" [starTemplate]="t" [readonly]="false" [max]="5" />
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="greska">{{greskaOcena}}</div>
+    <button type="button" class="btn btn-success" (click)="oceniUcenika()">Oceni</button>
+    <button type="button" class="btn btn-outline-success" (click)="close()">Otkazi</button>
+  </div>
+</ng-template>
+
+<!-- templejt za prikaz ocene -->
+<ng-template #t let-fill="fill">
+  <i class="bi-star-fill">
+      <i *ngIf="fill > 0" class="bi-star-fill filled" [style.width.%]="fill"></i>
+  </i>
+</ng-template>

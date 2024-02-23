@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "65b7b0f8ae0c757874858b7c"
+  },
+  "tekst": "Kako se zvao vaš prvi kućni ljubimac?"
+},
+{
+  "_id": {
+    "$oid": "65b7b0f8ae0c757874858b7d"
+  },
+  "tekst": "U kom gradu ste rođeni?"
+},
+{
+  "_id": {
+    "$oid": "65b7b0f8ae0c757874858b7e"
+  },
+  "tekst": "Koji je model vašeg prvog automobila?"
+},
+{
+  "_id": {
+    "$oid": "65b7b0f8ae0c757874858b7f"
+  },
+  "tekst": "Kako se zvala ulica u kojoj ste odrasli?"
+},
+{
+  "_id": {
+    "$oid": "65b7b0f8ae0c757874858b80"
+  },
+  "tekst": "Koje je devojačko prezime vaše majke?"
+},
+{
+  "_id": {
+    "$oid": "65b7b0f8ae0c757874858b81"
+  },
+  "tekst": "Kako se zvao vaš najbolji prijatelj iz detinjstva?"
+},
+{
+  "_id": {
+    "$oid": "65b7b0f8ae0c757874858b82"
+  },
+  "tekst": "Koji je mesec i godina venčanja vaših roditelja? (MM/YYYY)"
+},
+{
+  "_id": {
+    "$oid": "65b7b0f8ae0c757874858b83"
+  },
+  "tekst": "Koja vam je omiljena knjiga ili film?"
+},
+{
+  "_id": {
+    "$oid": "65b7b0f8ae0c757874858b84"
+  },
+  "tekst": "Koje je prezime trenera vašeg omiljenog sportskog tima?"
+},
+{
+  "_id": {
+    "$oid": "65b7b0f8ae0c757874858b85"
+  },
+  "tekst": "Koje je prezime vaše prve simpatije"
+}]

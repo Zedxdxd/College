@@ -1,0 +1,108 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <div class="row" style="margin-top: 30px;">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Arhiva proslih casova</h3>
+        </div>
+        <div class="card-body">
+          <p class="text-center" *ngIf="prosliCasovi.length == 0">Niste imali nijedan cas do sada.</p>
+          <table class="table table-warning table-bordered align-middle table-striped" style="text-align: center; margin-top: 15px;" *ngIf="prosliCasovi.length > 0">
+            <thead>
+              <tr>
+                <th>Vreme pocetka</th>
+                <th>Vreme kraja</th>
+                <th>Nastavnik</th>
+                <th>Naziv predmeta</th>
+                <th>Komentar nastavnika</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of prosliCasovi">
+                <td>{{c.start | date:"dd.MM.yyyy HH:mm"}}</td>
+                <td>{{c.end | date:"dd.MM.yyyy HH:mm"}}</td>
+                <td>{{c.nastavnik.ime}} {{c.nastavnik.prezime}}</td>
+                <td>{{c.predmet}}</td>
+                <td>{{c.komentarZaUcenika == "" ? "/" : c.komentarZaUcenika}}</td>
+                <td><button class="btn btn-success" (click)="formaOceniNastavnika(c)" *ngIf="c.ocenaZaNastavnika == 0">Oceni nastavnika</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 30px;">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Predstojeci casovi</h3>
+        </div>
+        <div class="card-body">
+          <p class="text-center" *ngIf="buduciCasovi.length == 0">Ne predstoji Vam nijedan cas.</p>
+          <table class="table table-warning table-bordered align-middle table-striped" style="text-align: center; margin-top: 15px;" *ngIf="buduciCasovi.length > 0">
+            <thead>
+              <tr>
+                <th>Vreme pocetka</th>
+                <th>Vreme kraja</th>
+                <th>Nastavnik</th>
+                <th>Naziv predmeta</th>
+                <th>Opis tema</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of buduciCasovi">
+                <td>{{c.start | date:"dd.MM.yyyy HH:mm"}}</td>
+                <td>{{c.end | date:"dd.MM.yyyy HH:mm"}}</td>
+                <td>{{c.nastavnik.ime}} {{c.nastavnik.prezime}}</td>
+                <td>{{c.predmet}}</td>
+                <td>{{c.opis == "" ? "/" : c.opis}}</td>
+                <td><button class="btn btn-link" *ngIf="c.start.valueOf() - currDate.valueOf() <= 15*60*1000" (click)="otvoriSastanak(c)">Prikljuci se casu</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #modalOcena let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">Ocena nastavnika</h5>
+    <button type="btn btn-danger" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label><b>Nastavnik</b> {{selektovanCas.nastavnik.ime}} {{selektovanCas.nastavnik.prezime}}</label>
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+      <label for="opis">Komentar za nastavnika:</label>
+      <input type="text" [(ngModel)]="selektovanCas.komentarZaNastavnika" class="form-control" id="opis" placeholder="Unesite komentar...">
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+      <label style="font-size: 20px;">Ocena: &nbsp;&nbsp;</label>
+
+      <ngb-rating [(rate)]="ocena" [starTemplate]="t" [readonly]="false" [max]="5" />
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="greska">{{greskaOcena}}</div>
+    <button type="button" class="btn btn-success" (click)="oceniNastavnika()">Oceni</button>
+    <button type="button" class="btn btn-outline-success" (click)="close()">Otkazi</button>
+  </div>
+</ng-template>
+
+<!-- templejt za prikaz ocene -->
+<ng-template #t let-fill="fill">
+  <i class="bi-star-fill">
+      <i *ngIf="fill > 0" class="bi-star-fill filled" [style.width.%]="fill"></i>
+  </i>
+</ng-template>

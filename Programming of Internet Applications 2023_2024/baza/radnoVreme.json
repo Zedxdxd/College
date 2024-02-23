@@ -1,0 +1,86 @@
+[{
+  "_id": {
+    "$oid": "65d0eed7bfb9a913297aaee3"
+  },
+  "start": {
+    "$date": "2024-02-23T06:00:00.000Z"
+  },
+  "end": {
+    "$date": "2024-02-23T14:00:00.000Z"
+  },
+  "nastavnik": {
+    "_id": "65d0c5b2dd35d55f08e7263a",
+    "korime": "drazen",
+    "lozinka": "",
+    "pitanje": "Kako se zvao vaš prvi kućni ljubimac?",
+    "odgovor": "Dzeki",
+    "ime": "Drazen",
+    "prezime": "Draskovic",
+    "pol": "M",
+    "adresa": "Cvijiceva 257a",
+    "telefon": "062-845-89-63",
+    "email": "drazen.draskovic@etf.rs",
+    "profilna": "drazen_drazen.png",
+    "tip": "nastavnik",
+    "tipSkole": "",
+    "razred": 0,
+    "cv": "drazen_cv_sample.pdf",
+    "predajePredmete": [
+      "Matematika",
+      "Informatika",
+      "Programiranje",
+      "Francuski jezik",
+      "Spanski jezik"
+    ],
+    "predajeUzrastu": [
+      "osn14",
+      "osn58",
+      "sr14"
+    ],
+    "gdeSteCuli": "Facebook grupa",
+    "odobrenaRegistracija": "da",
+    "__v": 0
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65d0f3c9bfb9a913297ab1ce"
+  },
+  "start": {
+    "$date": "2024-02-20T09:00:00.000Z"
+  },
+  "end": {
+    "$date": "2024-02-20T15:30:00.000Z"
+  },
+  "nastavnik": {
+    "_id": "65d0c860dd35d55f08e7267b",
+    "korime": "zaki",
+    "lozinka": "",
+    "pitanje": "Kako se zvao vaš najbolji prijatelj iz detinjstva?",
+    "odgovor": "Milos",
+    "ime": "Zaharije",
+    "prezime": "Radivojevic",
+    "pol": "M",
+    "adresa": "Bulevar Kralja Aleksandra 41",
+    "telefon": "061-549-87-45",
+    "email": "zaki@etf.rs",
+    "profilna": "zaki_zaki.png",
+    "tip": "nastavnik",
+    "tipSkole": "",
+    "razred": 0,
+    "cv": "zaki_CV.pdf",
+    "predajePredmete": [
+      "Informatika",
+      "Programiranje",
+      "Istorija"
+    ],
+    "predajeUzrastu": [
+      "sr14"
+    ],
+    "gdeSteCuli": "Rekao mi je prijatelj.",
+    "odobrenaRegistracija": "da",
+    "__v": 0
+  },
+  "__v": 0
+}]

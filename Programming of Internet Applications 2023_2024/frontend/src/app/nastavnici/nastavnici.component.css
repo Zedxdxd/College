@@ -1,0 +1,35 @@
+.centrirano {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+button.sortiranje {
+  color: #fff;
+  background-color: rgb(25, 135, 84);
+  font-size: small;
+}
+
+button.sortiranje:hover{
+  background-color: rgb(21, 115, 71);
+}
+
+.card-header {
+  background-color: #c7f6c4;
+}
+
+
+i {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+  padding-right: 0.1rem;
+  color: darkslategray;
+}
+
+.filled {
+  color: orange;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

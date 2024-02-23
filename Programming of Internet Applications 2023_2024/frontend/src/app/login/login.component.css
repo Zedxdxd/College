@@ -1,0 +1,24 @@
+.centrirano {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.greska {
+  color: red;
+}
+
+.card-header {
+  background-color: #c7f6c4;
+}
+
+button.sortiranje {
+  color: #fff;
+  background-color: rgb(25, 135, 84);
+  font-size: small;
+}
+
+button.sortiranje:hover{
+  background-color: rgb(21, 115, 71);
+}
+

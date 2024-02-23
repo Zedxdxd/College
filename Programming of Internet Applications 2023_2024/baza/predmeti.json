@@ -1,0 +1,1092 @@
+[{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b87"
+  },
+  "naziv": "Matematika",
+  "nastavnici": [
+    {
+      "korime": "drazen",
+      "lozinka": "$2b$10$LI3/ogNmt.wyc.9vl/6y5uzgeIKHtR6iKZRfVt4pwJCF30hw4YSn2",
+      "pitanje": "Kako se zvao vaš prvi kućni ljubimac?",
+      "odgovor": "Dzeki",
+      "ime": "Drazen",
+      "prezime": "Draskovic",
+      "pol": "M",
+      "adresa": "Cvijiceva 257a",
+      "telefon": "062-845-89-63",
+      "email": "drazen.draskovic@etf.rs",
+      "profilna": "drazen_drazen.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "drazen_cv_sample.pdf",
+      "predajePredmete": [
+        "Matematika",
+        "Informatika",
+        "Programiranje",
+        "Francuski jezik",
+        "Spanski jezik"
+      ],
+      "predajeUzrastu": [
+        "osn14",
+        "osn58",
+        "sr14"
+      ],
+      "gdeSteCuli": "Facebook grupa",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    },
+    {
+      "korime": "maja",
+      "lozinka": "$2b$10$9Z.rf4YgR06FCEpoPJZT4.f2q4bWqQamWm6SCZ4GiPBKsU2.ajStS",
+      "pitanje": "Koji je model vašeg prvog automobila?",
+      "odgovor": "Clio",
+      "ime": "Maja",
+      "prezime": "Vukasovic",
+      "pol": "Z",
+      "adresa": "Dunavska 37",
+      "telefon": "065-781-46-98",
+      "email": "majav@etf.rs",
+      "profilna": "maja_maja.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "maja_cv_sample.pdf",
+      "predajePredmete": [
+        "Matematika",
+        "Fizika",
+        "Informatika"
+      ],
+      "predajeUzrastu": [
+        "osn14",
+        "sr14"
+      ],
+      "gdeSteCuli": "LinkedIn",
+      "odobrenaRegistracija": "ne",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b88"
+  },
+  "naziv": "Fizika",
+  "nastavnici": [
+    {
+      "korime": "bosko",
+      "lozinka": "$2b$10$ZOdVsINeNpxSIpm4StEB9O4BDUp3XnJYcb1stmiHNnylAk1pYn35K",
+      "pitanje": "Kako se zvao vaš prvi kućni ljubimac?",
+      "odgovor": "Lea",
+      "ime": "Bosko",
+      "prezime": "Nikolic",
+      "pol": "M",
+      "adresa": "Albanske Spomenice 12",
+      "telefon": "061-564-28-97",
+      "email": "nbosko@etf.rs",
+      "profilna": "bosko_bosko.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "bosko_CV.pdf",
+      "predajePredmete": [
+        "Fizika",
+        "Hemija",
+        "Biologija",
+        "Geografija"
+      ],
+      "predajeUzrastu": [
+        "osn58"
+      ],
+      "gdeSteCuli": "Instagram reklama",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    },
+    {
+      "korime": "maja",
+      "lozinka": "$2b$10$9Z.rf4YgR06FCEpoPJZT4.f2q4bWqQamWm6SCZ4GiPBKsU2.ajStS",
+      "pitanje": "Koji je model vašeg prvog automobila?",
+      "odgovor": "Clio",
+      "ime": "Maja",
+      "prezime": "Vukasovic",
+      "pol": "Z",
+      "adresa": "Dunavska 37",
+      "telefon": "065-781-46-98",
+      "email": "majav@etf.rs",
+      "profilna": "maja_maja.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "maja_cv_sample.pdf",
+      "predajePredmete": [
+        "Matematika",
+        "Fizika",
+        "Informatika"
+      ],
+      "predajeUzrastu": [
+        "osn14",
+        "sr14"
+      ],
+      "gdeSteCuli": "LinkedIn",
+      "odobrenaRegistracija": "ne",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b89"
+  },
+  "naziv": "Hemija",
+  "nastavnici": [
+    {
+      "korime": "bosko",
+      "lozinka": "$2b$10$ZOdVsINeNpxSIpm4StEB9O4BDUp3XnJYcb1stmiHNnylAk1pYn35K",
+      "pitanje": "Kako se zvao vaš prvi kućni ljubimac?",
+      "odgovor": "Lea",
+      "ime": "Bosko",
+      "prezime": "Nikolic",
+      "pol": "M",
+      "adresa": "Albanske Spomenice 12",
+      "telefon": "061-564-28-97",
+      "email": "nbosko@etf.rs",
+      "profilna": "bosko_bosko.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "bosko_CV.pdf",
+      "predajePredmete": [
+        "Fizika",
+        "Hemija",
+        "Biologija",
+        "Geografija"
+      ],
+      "predajeUzrastu": [
+        "osn58"
+      ],
+      "gdeSteCuli": "Instagram reklama",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    },
+    {
+      "korime": "tasha",
+      "lozinka": "$2b$10$njwXumpB3szTGG44DeZS..2nUyBU.vBxQvr5mwM306uTp1TdG4xxy",
+      "pitanje": "Kako se zvala ulica u kojoj ste odrasli?",
+      "odgovor": "Primorska",
+      "ime": "Tamara",
+      "prezime": "Sekularac",
+      "pol": "Z",
+      "adresa": "Savska 10",
+      "telefon": "067-813-54-98",
+      "email": "tasha@etf.rs",
+      "profilna": "tasha_tasha.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "tasha_2023_2024_SI4PIA_Projekat_za_jan_feb.pdf",
+      "predajePredmete": [
+        "Hemija",
+        "Biologija"
+      ],
+      "predajeUzrastu": [
+        "osn14",
+        "osn58",
+        "sr14"
+      ],
+      "gdeSteCuli": "Od porodice.",
+      "odobrenaRegistracija": "ne",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b8a"
+  },
+  "naziv": "Informatika",
+  "nastavnici": [
+    {
+      "korime": "drazen",
+      "lozinka": "$2b$10$LI3/ogNmt.wyc.9vl/6y5uzgeIKHtR6iKZRfVt4pwJCF30hw4YSn2",
+      "pitanje": "Kako se zvao vaš prvi kućni ljubimac?",
+      "odgovor": "Dzeki",
+      "ime": "Drazen",
+      "prezime": "Draskovic",
+      "pol": "M",
+      "adresa": "Cvijiceva 257a",
+      "telefon": "062-845-89-63",
+      "email": "drazen.draskovic@etf.rs",
+      "profilna": "drazen_drazen.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "drazen_cv_sample.pdf",
+      "predajePredmete": [
+        "Matematika",
+        "Informatika",
+        "Programiranje",
+        "Francuski jezik",
+        "Spanski jezik"
+      ],
+      "predajeUzrastu": [
+        "osn14",
+        "osn58",
+        "sr14"
+      ],
+      "gdeSteCuli": "Facebook grupa",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    },
+    {
+      "korime": "zaki",
+      "lozinka": "$2b$10$YCRq9Ryn1KvVQG2nuMPLgeSlkm7CA6TRfz8JXxaf2HMpTbPo.J/pK",
+      "pitanje": "Kako se zvao vaš najbolji prijatelj iz detinjstva?",
+      "odgovor": "Milos",
+      "ime": "Zaharije",
+      "prezime": "Radivojevic",
+      "pol": "M",
+      "adresa": "Bulevar Kralja Aleksandra 41",
+      "telefon": "061-549-87-45",
+      "email": "zaki@etf.rs",
+      "profilna": "zaki_zaki.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "zaki_CV.pdf",
+      "predajePredmete": [
+        "Informatika",
+        "Programiranje",
+        "Istorija"
+      ],
+      "predajeUzrastu": [
+        "sr14"
+      ],
+      "gdeSteCuli": "Rekao mi je prijatelj.",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    },
+    {
+      "korime": "maja",
+      "lozinka": "$2b$10$9Z.rf4YgR06FCEpoPJZT4.f2q4bWqQamWm6SCZ4GiPBKsU2.ajStS",
+      "pitanje": "Koji je model vašeg prvog automobila?",
+      "odgovor": "Clio",
+      "ime": "Maja",
+      "prezime": "Vukasovic",
+      "pol": "Z",
+      "adresa": "Dunavska 37",
+      "telefon": "065-781-46-98",
+      "email": "majav@etf.rs",
+      "profilna": "maja_maja.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "maja_cv_sample.pdf",
+      "predajePredmete": [
+        "Matematika",
+        "Fizika",
+        "Informatika"
+      ],
+      "predajeUzrastu": [
+        "osn14",
+        "sr14"
+      ],
+      "gdeSteCuli": "LinkedIn",
+      "odobrenaRegistracija": "ne",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b8b"
+  },
+  "naziv": "Programiranje",
+  "nastavnici": [
+    {
+      "korime": "jelica",
+      "lozinka": "$2b$10$Q7ehwMRPOJF7kHEwAqHWgujSjiNlyMDjXErei39DCsO2nU6P49FLK",
+      "pitanje": "Koji je model vašeg prvog automobila?",
+      "odgovor": "BMW M3",
+      "ime": "Jelica",
+      "prezime": "Cincovic",
+      "pol": "Z",
+      "adresa": "Primorska 25",
+      "telefon": "068-744-51-62",
+      "email": "jelica@etf.rs",
+      "profilna": "jelica_jelica.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "jelica_2023_2024_SI4PIA_Projekat_za_jan_feb.pdf",
+      "predajePredmete": [
+        "Programiranje",
+        "Latinski jezik"
+      ],
+      "predajeUzrastu": [
+        "osn58",
+        "sr14"
+      ],
+      "gdeSteCuli": "LinkedIn",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    },
+    {
+      "korime": "drazen",
+      "lozinka": "$2b$10$LI3/ogNmt.wyc.9vl/6y5uzgeIKHtR6iKZRfVt4pwJCF30hw4YSn2",
+      "pitanje": "Kako se zvao vaš prvi kućni ljubimac?",
+      "odgovor": "Dzeki",
+      "ime": "Drazen",
+      "prezime": "Draskovic",
+      "pol": "M",
+      "adresa": "Cvijiceva 257a",
+      "telefon": "062-845-89-63",
+      "email": "drazen.draskovic@etf.rs",
+      "profilna": "drazen_drazen.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "drazen_cv_sample.pdf",
+      "predajePredmete": [
+        "Matematika",
+        "Informatika",
+        "Programiranje",
+        "Francuski jezik",
+        "Spanski jezik"
+      ],
+      "predajeUzrastu": [
+        "osn14",
+        "osn58",
+        "sr14"
+      ],
+      "gdeSteCuli": "Facebook grupa",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    },
+    {
+      "korime": "zaki",
+      "lozinka": "$2b$10$YCRq9Ryn1KvVQG2nuMPLgeSlkm7CA6TRfz8JXxaf2HMpTbPo.J/pK",
+      "pitanje": "Kako se zvao vaš najbolji prijatelj iz detinjstva?",
+      "odgovor": "Milos",
+      "ime": "Zaharije",
+      "prezime": "Radivojevic",
+      "pol": "M",
+      "adresa": "Bulevar Kralja Aleksandra 41",
+      "telefon": "061-549-87-45",
+      "email": "zaki@etf.rs",
+      "profilna": "zaki_zaki.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "zaki_CV.pdf",
+      "predajePredmete": [
+        "Informatika",
+        "Programiranje",
+        "Istorija"
+      ],
+      "predajeUzrastu": [
+        "sr14"
+      ],
+      "gdeSteCuli": "Rekao mi je prijatelj.",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b8c"
+  },
+  "naziv": "Srpski jezik i knjizevnost",
+  "nastavnici": [
+    {
+      "korime": "sanja",
+      "lozinka": "$2b$10$LDUCR9Ou2DiQeDQrhC.YbOyqjxrguBkHOBZV1ZYrHmZhmxe..5AfO",
+      "pitanje": "Kako se zvao vaš najbolji prijatelj iz detinjstva?",
+      "odgovor": "Maja",
+      "ime": "Sanja",
+      "prezime": "Radosavljevic",
+      "pol": "Z",
+      "adresa": "Buler Kralja Aleksandra 79",
+      "telefon": "063-649-85-21",
+      "email": "sanjar@etf.rs",
+      "profilna": "sanja_sanja.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "sanja_[SI1M1] 03 - 1 (Matrice) 2020.pdf",
+      "predajePredmete": [
+        "Srpski jezik i knjizevnost",
+        "Engleski jezik",
+        "Nemacki jezik",
+        "Italijanski jezik",
+        "Francuski jezik",
+        "Spanski jezik"
+      ],
+      "predajeUzrastu": [
+        "sr14"
+      ],
+      "gdeSteCuli": "LinkedIn",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b8d"
+  },
+  "naziv": "Engleski jezik",
+  "nastavnici": [
+    {
+      "korime": "sanja",
+      "lozinka": "$2b$10$LDUCR9Ou2DiQeDQrhC.YbOyqjxrguBkHOBZV1ZYrHmZhmxe..5AfO",
+      "pitanje": "Kako se zvao vaš najbolji prijatelj iz detinjstva?",
+      "odgovor": "Maja",
+      "ime": "Sanja",
+      "prezime": "Radosavljevic",
+      "pol": "Z",
+      "adresa": "Buler Kralja Aleksandra 79",
+      "telefon": "063-649-85-21",
+      "email": "sanjar@etf.rs",
+      "profilna": "sanja_sanja.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "sanja_[SI1M1] 03 - 1 (Matrice) 2020.pdf",
+      "predajePredmete": [
+        "Srpski jezik i knjizevnost",
+        "Engleski jezik",
+        "Nemacki jezik",
+        "Italijanski jezik",
+        "Francuski jezik",
+        "Spanski jezik"
+      ],
+      "predajeUzrastu": [
+        "sr14"
+      ],
+      "gdeSteCuli": "LinkedIn",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b8e"
+  },
+  "naziv": "Nemacki jezik",
+  "nastavnici": [
+    {
+      "korime": "sanja",
+      "lozinka": "$2b$10$LDUCR9Ou2DiQeDQrhC.YbOyqjxrguBkHOBZV1ZYrHmZhmxe..5AfO",
+      "pitanje": "Kako se zvao vaš najbolji prijatelj iz detinjstva?",
+      "odgovor": "Maja",
+      "ime": "Sanja",
+      "prezime": "Radosavljevic",
+      "pol": "Z",
+      "adresa": "Buler Kralja Aleksandra 79",
+      "telefon": "063-649-85-21",
+      "email": "sanjar@etf.rs",
+      "profilna": "sanja_sanja.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "sanja_[SI1M1] 03 - 1 (Matrice) 2020.pdf",
+      "predajePredmete": [
+        "Srpski jezik i knjizevnost",
+        "Engleski jezik",
+        "Nemacki jezik",
+        "Italijanski jezik",
+        "Francuski jezik",
+        "Spanski jezik"
+      ],
+      "predajeUzrastu": [
+        "sr14"
+      ],
+      "gdeSteCuli": "LinkedIn",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b8f"
+  },
+  "naziv": "Italijanski jezik",
+  "nastavnici": [
+    {
+      "korime": "sanja",
+      "lozinka": "$2b$10$LDUCR9Ou2DiQeDQrhC.YbOyqjxrguBkHOBZV1ZYrHmZhmxe..5AfO",
+      "pitanje": "Kako se zvao vaš najbolji prijatelj iz detinjstva?",
+      "odgovor": "Maja",
+      "ime": "Sanja",
+      "prezime": "Radosavljevic",
+      "pol": "Z",
+      "adresa": "Buler Kralja Aleksandra 79",
+      "telefon": "063-649-85-21",
+      "email": "sanjar@etf.rs",
+      "profilna": "sanja_sanja.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "sanja_[SI1M1] 03 - 1 (Matrice) 2020.pdf",
+      "predajePredmete": [
+        "Srpski jezik i knjizevnost",
+        "Engleski jezik",
+        "Nemacki jezik",
+        "Italijanski jezik",
+        "Francuski jezik",
+        "Spanski jezik"
+      ],
+      "predajeUzrastu": [
+        "sr14"
+      ],
+      "gdeSteCuli": "LinkedIn",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b90"
+  },
+  "naziv": "Francuski jezik",
+  "nastavnici": [
+    {
+      "korime": "drazen",
+      "lozinka": "$2b$10$LI3/ogNmt.wyc.9vl/6y5uzgeIKHtR6iKZRfVt4pwJCF30hw4YSn2",
+      "pitanje": "Kako se zvao vaš prvi kućni ljubimac?",
+      "odgovor": "Dzeki",
+      "ime": "Drazen",
+      "prezime": "Draskovic",
+      "pol": "M",
+      "adresa": "Cvijiceva 257a",
+      "telefon": "062-845-89-63",
+      "email": "drazen.draskovic@etf.rs",
+      "profilna": "drazen_drazen.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "drazen_cv_sample.pdf",
+      "predajePredmete": [
+        "Matematika",
+        "Informatika",
+        "Programiranje",
+        "Francuski jezik",
+        "Spanski jezik"
+      ],
+      "predajeUzrastu": [
+        "osn14",
+        "osn58",
+        "sr14"
+      ],
+      "gdeSteCuli": "Facebook grupa",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    },
+    {
+      "korime": "sanja",
+      "lozinka": "$2b$10$LDUCR9Ou2DiQeDQrhC.YbOyqjxrguBkHOBZV1ZYrHmZhmxe..5AfO",
+      "pitanje": "Kako se zvao vaš najbolji prijatelj iz detinjstva?",
+      "odgovor": "Maja",
+      "ime": "Sanja",
+      "prezime": "Radosavljevic",
+      "pol": "Z",
+      "adresa": "Buler Kralja Aleksandra 79",
+      "telefon": "063-649-85-21",
+      "email": "sanjar@etf.rs",
+      "profilna": "sanja_sanja.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "sanja_[SI1M1] 03 - 1 (Matrice) 2020.pdf",
+      "predajePredmete": [
+        "Srpski jezik i knjizevnost",
+        "Engleski jezik",
+        "Nemacki jezik",
+        "Italijanski jezik",
+        "Francuski jezik",
+        "Spanski jezik"
+      ],
+      "predajeUzrastu": [
+        "sr14"
+      ],
+      "gdeSteCuli": "LinkedIn",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b91"
+  },
+  "naziv": "Spanski jezik",
+  "nastavnici": [
+    {
+      "korime": "drazen",
+      "lozinka": "$2b$10$LI3/ogNmt.wyc.9vl/6y5uzgeIKHtR6iKZRfVt4pwJCF30hw4YSn2",
+      "pitanje": "Kako se zvao vaš prvi kućni ljubimac?",
+      "odgovor": "Dzeki",
+      "ime": "Drazen",
+      "prezime": "Draskovic",
+      "pol": "M",
+      "adresa": "Cvijiceva 257a",
+      "telefon": "062-845-89-63",
+      "email": "drazen.draskovic@etf.rs",
+      "profilna": "drazen_drazen.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "drazen_cv_sample.pdf",
+      "predajePredmete": [
+        "Matematika",
+        "Informatika",
+        "Programiranje",
+        "Francuski jezik",
+        "Spanski jezik"
+      ],
+      "predajeUzrastu": [
+        "osn14",
+        "osn58",
+        "sr14"
+      ],
+      "gdeSteCuli": "Facebook grupa",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    },
+    {
+      "korime": "sanja",
+      "lozinka": "$2b$10$LDUCR9Ou2DiQeDQrhC.YbOyqjxrguBkHOBZV1ZYrHmZhmxe..5AfO",
+      "pitanje": "Kako se zvao vaš najbolji prijatelj iz detinjstva?",
+      "odgovor": "Maja",
+      "ime": "Sanja",
+      "prezime": "Radosavljevic",
+      "pol": "Z",
+      "adresa": "Buler Kralja Aleksandra 79",
+      "telefon": "063-649-85-21",
+      "email": "sanjar@etf.rs",
+      "profilna": "sanja_sanja.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "sanja_[SI1M1] 03 - 1 (Matrice) 2020.pdf",
+      "predajePredmete": [
+        "Srpski jezik i knjizevnost",
+        "Engleski jezik",
+        "Nemacki jezik",
+        "Italijanski jezik",
+        "Francuski jezik",
+        "Spanski jezik"
+      ],
+      "predajeUzrastu": [
+        "sr14"
+      ],
+      "gdeSteCuli": "LinkedIn",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b92"
+  },
+  "naziv": "Latinski jezik",
+  "nastavnici": [
+    {
+      "korime": "jelica",
+      "lozinka": "$2b$10$Q7ehwMRPOJF7kHEwAqHWgujSjiNlyMDjXErei39DCsO2nU6P49FLK",
+      "pitanje": "Koji je model vašeg prvog automobila?",
+      "odgovor": "BMW M3",
+      "ime": "Jelica",
+      "prezime": "Cincovic",
+      "pol": "Z",
+      "adresa": "Primorska 25",
+      "telefon": "068-744-51-62",
+      "email": "jelica@etf.rs",
+      "profilna": "jelica_jelica.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "jelica_2023_2024_SI4PIA_Projekat_za_jan_feb.pdf",
+      "predajePredmete": [
+        "Programiranje",
+        "Latinski jezik"
+      ],
+      "predajeUzrastu": [
+        "osn58",
+        "sr14"
+      ],
+      "gdeSteCuli": "LinkedIn",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b93"
+  },
+  "naziv": "Biologija",
+  "nastavnici": [
+    {
+      "korime": "bosko",
+      "lozinka": "$2b$10$ZOdVsINeNpxSIpm4StEB9O4BDUp3XnJYcb1stmiHNnylAk1pYn35K",
+      "pitanje": "Kako se zvao vaš prvi kućni ljubimac?",
+      "odgovor": "Lea",
+      "ime": "Bosko",
+      "prezime": "Nikolic",
+      "pol": "M",
+      "adresa": "Albanske Spomenice 12",
+      "telefon": "061-564-28-97",
+      "email": "nbosko@etf.rs",
+      "profilna": "bosko_bosko.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "bosko_CV.pdf",
+      "predajePredmete": [
+        "Fizika",
+        "Hemija",
+        "Biologija",
+        "Geografija"
+      ],
+      "predajeUzrastu": [
+        "osn58"
+      ],
+      "gdeSteCuli": "Instagram reklama",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    },
+    {
+      "korime": "tasha",
+      "lozinka": "$2b$10$njwXumpB3szTGG44DeZS..2nUyBU.vBxQvr5mwM306uTp1TdG4xxy",
+      "pitanje": "Kako se zvala ulica u kojoj ste odrasli?",
+      "odgovor": "Primorska",
+      "ime": "Tamara",
+      "prezime": "Sekularac",
+      "pol": "Z",
+      "adresa": "Savska 10",
+      "telefon": "067-813-54-98",
+      "email": "tasha@etf.rs",
+      "profilna": "tasha_tasha.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "tasha_2023_2024_SI4PIA_Projekat_za_jan_feb.pdf",
+      "predajePredmete": [
+        "Hemija",
+        "Biologija"
+      ],
+      "predajeUzrastu": [
+        "osn14",
+        "osn58",
+        "sr14"
+      ],
+      "gdeSteCuli": "Od porodice.",
+      "odobrenaRegistracija": "ne",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b94"
+  },
+  "naziv": "Istorija",
+  "nastavnici": [
+    {
+      "korime": "zaki",
+      "lozinka": "$2b$10$YCRq9Ryn1KvVQG2nuMPLgeSlkm7CA6TRfz8JXxaf2HMpTbPo.J/pK",
+      "pitanje": "Kako se zvao vaš najbolji prijatelj iz detinjstva?",
+      "odgovor": "Milos",
+      "ime": "Zaharije",
+      "prezime": "Radivojevic",
+      "pol": "M",
+      "adresa": "Bulevar Kralja Aleksandra 41",
+      "telefon": "061-549-87-45",
+      "email": "zaki@etf.rs",
+      "profilna": "zaki_zaki.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "zaki_CV.pdf",
+      "predajePredmete": [
+        "Informatika",
+        "Programiranje",
+        "Istorija"
+      ],
+      "predajeUzrastu": [
+        "sr14"
+      ],
+      "gdeSteCuli": "Rekao mi je prijatelj.",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b95"
+  },
+  "naziv": "Geografija",
+  "nastavnici": [
+    {
+      "korime": "bosko",
+      "lozinka": "$2b$10$ZOdVsINeNpxSIpm4StEB9O4BDUp3XnJYcb1stmiHNnylAk1pYn35K",
+      "pitanje": "Kako se zvao vaš prvi kućni ljubimac?",
+      "odgovor": "Lea",
+      "ime": "Bosko",
+      "prezime": "Nikolic",
+      "pol": "M",
+      "adresa": "Albanske Spomenice 12",
+      "telefon": "061-564-28-97",
+      "email": "nbosko@etf.rs",
+      "profilna": "bosko_bosko.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "bosko_CV.pdf",
+      "predajePredmete": [
+        "Fizika",
+        "Hemija",
+        "Biologija",
+        "Geografija"
+      ],
+      "predajeUzrastu": [
+        "osn58"
+      ],
+      "gdeSteCuli": "Instagram reklama",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65b7d24bae0c757874858b96"
+  },
+  "naziv": "Svet oko nas",
+  "nastavnici": [],
+  "odobren": "da"
+},
+{
+  "_id": {
+    "$oid": "65d0c38bdd35d55f08e725fe"
+  },
+  "naziv": "Web programiranje",
+  "nastavnici": [
+    {
+      "korime": "jelica",
+      "lozinka": "$2b$10$Q7ehwMRPOJF7kHEwAqHWgujSjiNlyMDjXErei39DCsO2nU6P49FLK",
+      "pitanje": "Koji je model vašeg prvog automobila?",
+      "odgovor": "BMW M3",
+      "ime": "Jelica",
+      "prezime": "Cincovic",
+      "pol": "Z",
+      "adresa": "Primorska 25",
+      "telefon": "068-744-51-62",
+      "email": "jelica@etf.rs",
+      "profilna": "jelica_jelica.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "jelica_2023_2024_SI4PIA_Projekat_za_jan_feb.pdf",
+      "predajePredmete": [
+        "Programiranje",
+        "Latinski jezik"
+      ],
+      "predajeUzrastu": [
+        "osn58",
+        "sr14"
+      ],
+      "gdeSteCuli": "LinkedIn",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "da",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65d0c5b2dd35d55f08e72642"
+  },
+  "naziv": "Testiranje softvera",
+  "nastavnici": [
+    {
+      "korime": "drazen",
+      "lozinka": "$2b$10$LI3/ogNmt.wyc.9vl/6y5uzgeIKHtR6iKZRfVt4pwJCF30hw4YSn2",
+      "pitanje": "Kako se zvao vaš prvi kućni ljubimac?",
+      "odgovor": "Dzeki",
+      "ime": "Drazen",
+      "prezime": "Draskovic",
+      "pol": "M",
+      "adresa": "Cvijiceva 257a",
+      "telefon": "062-845-89-63",
+      "email": "drazen.draskovic@etf.rs",
+      "profilna": "drazen_drazen.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "drazen_cv_sample.pdf",
+      "predajePredmete": [
+        "Matematika",
+        "Informatika",
+        "Programiranje",
+        "Francuski jezik",
+        "Spanski jezik"
+      ],
+      "predajeUzrastu": [
+        "osn14",
+        "osn58",
+        "sr14"
+      ],
+      "gdeSteCuli": "Facebook grupa",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "ne",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65d0c860dd35d55f08e72681"
+  },
+  "naziv": "Arhitektura racunara",
+  "nastavnici": [
+    {
+      "korime": "zaki",
+      "lozinka": "$2b$10$YCRq9Ryn1KvVQG2nuMPLgeSlkm7CA6TRfz8JXxaf2HMpTbPo.J/pK",
+      "pitanje": "Kako se zvao vaš najbolji prijatelj iz detinjstva?",
+      "odgovor": "Milos",
+      "ime": "Zaharije",
+      "prezime": "Radivojevic",
+      "pol": "M",
+      "adresa": "Bulevar Kralja Aleksandra 41",
+      "telefon": "061-549-87-45",
+      "email": "zaki@etf.rs",
+      "profilna": "zaki_zaki.png",
+      "tip": "nastavnik",
+      "tipSkole": "",
+      "razred": 0,
+      "uzrast": "",
+      "cv": "zaki_CV.pdf",
+      "predajePredmete": [
+        "Informatika",
+        "Programiranje",
+        "Istorija"
+      ],
+      "predajeUzrastu": [
+        "sr14"
+      ],
+      "gdeSteCuli": "Rekao mi je prijatelj.",
+      "odobrenaRegistracija": "da",
+      "cvurl": "",
+      "prosecnaOcena": 0,
+      "message": ""
+    }
+  ],
+  "odobren": "ne",
+  "__v": 0
+}]

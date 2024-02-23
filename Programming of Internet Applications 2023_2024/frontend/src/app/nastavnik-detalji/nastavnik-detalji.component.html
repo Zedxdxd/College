@@ -1,0 +1,146 @@
+<app-header></app-header>
+<div class="container" style="width: 80%;">
+  <div class="row centrirano">
+    <div class="col-lg-6 centrirano"  style="margin-top: 50px;">
+      <img [src]="profilnaUrl" alt="" width="400" height="400" class="rounded" id="profilnaSlika">
+    </div>
+    <div class="col-lg-6"  style="margin-top: 50px;">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="text-center">Profil nastavnika {{nastavnik.ime}}</h5>
+        </div>
+        <div class="card-body">
+          <div class="form-group ">
+            <label for="ime">Ime:</label>
+            <div><input type="text" class="input-text" disabled id="ime" [(ngModel)]="nastavnik.ime"></div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="prezime">Prezime:</label>
+            <div><input type="text" class="input-text" disabled id="prezime" [(ngModel)]="nastavnik.prezime"></div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="adresa">Adresa:</label>
+            <div><input type="text" class="input-text" disabled id="adresa" [(ngModel)]="nastavnik.adresa"></div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="email">Email:</label>
+            <div><input type="text" class="input-text" disabled id="email" [(ngModel)]="nastavnik.email"></div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="telefon">Telefon:</label>
+            <div><input type="text" class="input-text" disabled id="telefon" [(ngModel)]="nastavnik.telefon"></div>
+          </div>
+          <label style="margin-top: 15px;">Predmeti koje predaje:</label>
+          <div class="row">
+            <div class="form-group col-lg-6 col-md-12" *ngFor="let p of nastavnik.predajePredmete">
+              <label class="form-check-label predmet-label">{{p}}</label>
+            </div>
+          </div>
+          <!-- <label style="margin-top: 15px;">Predaje uzrastu:</label>
+          <div class="form-check">
+            <label class="uzrast-label" *ngIf="nastavnik.predajeUzrastu.includes('osn14')">Osnovna skola(1-4. razred)</label>
+          </div>
+          <div class="form-check">
+            <label class="uzrast-label" *ngIf="nastavnik.predajeUzrastu.includes('osn58')">Osnovna skola(5-8. razred)</label>
+          </div>
+          <div class="form-check">
+            <label class="uzrast-label" *ngIf="nastavnik.predajeUzrastu.includes('sr14')">Srednja skola</label>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 30px;">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Komentari</h3>
+        </div>
+        <div class="card-body">
+          <p class="text-center" *ngIf="casoviNastavnika.length == 0">Nastavnik nije nijednom ocenjen.</p>
+          <ng-container *ngIf="casoviNastavnika.length > 0">
+            <div class="col-12 komentar" *ngFor="let c of casoviNastavnika">
+              <div class="row">
+                <div class="col-6">
+                  <span style="font-size: 20px; font-weight: bold;">{{c.ucenik.ime}} {{c.ucenik.prezime}}</span>
+                </div>
+                <div class="col-6" style="display: flex; justify-content: end;">
+                  <ngb-rating [rate]="c.ocenaZaNastavnika" [starTemplate]="t" [readonly]="true" [max]="5" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  {{c.komentarZaNastavnika}}
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 30px;">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Forma za zakazivanje casa</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="predmet">Predmet:</label>
+            <select id = "predmet" class="form-control" [disabled]="nastavnik.predajePredmete.length == 1" [(ngModel)]="izabranPredmet">
+              <option value="" *ngIf="nastavnik.predajePredmete.length > 1">Izaberite predmet</option>
+              <option value="{{p}}" *ngFor="let p of nastavnik.predajePredmete">{{p}}</option>
+            </select>
+            <div class="greska">{{greskaIzabranPredmet}}</div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="datumVreme">Datum i vreme casa:</label>
+            <input type="datetime-local" [(ngModel)]="datumVreme" class="form-control" id="datumVreme">
+            <div class="greska">{{greskaIzabranDatum}}</div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="opis">Opis tema koje zelite da predjete:</label>
+            <input type="text" [(ngModel)]="opis" class="form-control" id="opis" placeholder="Unesite opis...">
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="dupli" class="form-check-label">
+              <input type="checkbox" [(ngModel)]="dupli" class="form-check-input" id="dupli">Zelim dupli cas
+            </label>
+          </div>
+          <div class="centrirano greska" [innerHTML]="greskaZakazivanje"></div>
+          <div class="centrirano" style="color: green;">{{uspehZakazivanje}}&nbsp;&nbsp;
+            <div class="spinner-border spinner-border-sm centrirano" role="status" *ngIf="uspehZakazivanje != '' ">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          <div class="centrirano" style="margin-top: 15px;">
+            <button (click)="zakazi()" class="btn btn-success btn-block">Zakazi cas</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 30px;">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Zakazivanje casa preko kalendara</h3>
+        </div>
+        <div class="card-body">
+          <app-ucenik-kalendar></app-ucenik-kalendar>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- templejt za prikaz ocene -->
+<ng-template #t let-fill="fill">
+  <i class="bi-star-fill">
+      <i *ngIf="fill > 0" class="bi-star-fill filled" [style.width.%]="fill"></i>
+  </i>
+</ng-template>

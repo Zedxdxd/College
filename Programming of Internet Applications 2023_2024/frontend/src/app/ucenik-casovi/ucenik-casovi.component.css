@@ -1,0 +1,28 @@
+.centrirano {
+  justify-content: center;
+  display: flex;
+}
+
+.card-header {
+  background-color: #c7f6c4;
+}
+
+.greska {
+  color: red;
+}
+
+i {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+  padding-right: 0.1rem;
+  color: #d3d3d3;
+}
+
+.filled {
+  color: orange;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

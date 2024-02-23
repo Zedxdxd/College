@@ -1,0 +1,13 @@
+.greska {
+  color: red;
+}
+
+.centrirano {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.card-header {
+  background-color: #c7f6c4;
+}
