@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="container mt-5" style="min-height: 100vh;">
+<div class="card">
+  <div class="card-header">
+      <h3 class="text-center">Obavestenja</h3>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12 text-center" *ngIf="svaObavestenja.length == 0">Nemate nijedno obavestenje.</div>
+      <ng-container *ngIf="svaObavestenja.length > 0">
+        <div class="col-12" *ngFor="let o of svaObavestenja" style="margin-top: 15px;"
+        [class.otkazan]="o.status == 'otkazan'"
+        [class.potvrdjen]="o.status == 'potvrdjen'"
+        [class.odbijen]="o.status == 'odbijen'"
+        [class.neprocitano]="!o.procitan">
+
+          <div style="font-size: 25px;">
+            <span *ngIf="o.status == 'otkazan'">Otkazan cas</span>
+            <span *ngIf="o.status == 'odbijen'">Odbijen cas</span>
+            <span *ngIf="o.status == 'potvrdjen'">Potvrdjen cas</span>
+          </div>
+
+          Nastavnik {{o.nastavnik.ime}} {{o.nastavnik.prezime}} je
+          <span *ngIf="o.status == 'otkazan'">otkazao</span>
+          <span *ngIf="o.status == 'odbijen'">odbio</span>
+          <span *ngIf="o.status == 'potvrdjen'">potvrdio</span>
+          cas iz predmeta {{o.predmet}} zakazan za {{o.start | date:"dd.MM.yyyy HH:mm"}}.
+          <span *ngIf="o.obrazlozenje != ''">Uz obrazlozenje: {{o.obrazlozenje}}</span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+</div>

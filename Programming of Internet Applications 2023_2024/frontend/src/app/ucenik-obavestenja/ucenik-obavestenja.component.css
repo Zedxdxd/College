@@ -1,0 +1,32 @@
+
+.centrirano {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.card-header {
+  background-color: #c7f6c4;
+}
+
+.neprocitano {
+  font-weight: bold;
+}
+
+.otkazan {
+  border: 2px solid rgba(255, 0, 0, 0.5);;
+  padding: 20px;
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.potvrdjen {
+  border: 2px solid rgba(0, 255, 0, 0.5);;
+  padding: 20px;
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+.odbijen {
+  border: 2px solid rgba(255, 165, 0, 0.5);;
+  padding: 20px;
+  background-color: rgba(255, 165, 0, 0.2);
+}

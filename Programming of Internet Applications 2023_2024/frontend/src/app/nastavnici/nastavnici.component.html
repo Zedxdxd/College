@@ -1,0 +1,100 @@
+<app-header></app-header>
+<div class="container mt-5">
+
+  <div class="row" style="margin-top: 25px;">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="text-center">Pregled nastavnika</h4>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="nazivPredmeta">Naziv predmeta:</label>
+                <input type="text" [(ngModel)]="nazivPredmeta" class="form-control" id="nazivPredmeta">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="imeNastavnika">Ime nastavnika:</label>
+                <input type="text" [(ngModel)]="imeNastavnika" class="form-control" id="imeNastavnika">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="prezimeNastavnika">Prezime nastavnika:</label>
+                <input type="text" [(ngModel)]="prezimeNastavnika" class="form-control" id="prezimeNastavnika">
+              </div>
+            </div>
+          </div>
+          <table class="table table-warning table-bordered align-middle" style="text-align: center; margin-top: 15px;">
+            <thead>
+              <tr>
+                <th>
+                  Naziv predmeta
+                  <button class="btn" style="margin-left: 20px;" (click)="sortPredmeti(true)">🔼</button>
+                  <button class="btn" style="margin-left: 5px;" (click)="sortPredmeti(false)">🔽</button>
+                </th>
+                <th>Nastavnici</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let p of sviPredmeti">
+              <tr *ngIf="nazivPredmeta == '' || p.naziv.toLocaleLowerCase().includes(nazivPredmeta.toLocaleLowerCase())">
+                <td>{{p.naziv}}</td>
+                <td>
+                  <p *ngIf="p.nastavnici.length == 0">Nijedan nastavnik ne drzi ovaj predmet Vasem uzrastu.</p>
+                  <table class="table table-warning table-striped table-bordered " style="text-align: center;" *ngIf="p.nastavnici.length > 0">
+                    <thead>
+                      <th>
+                        Ime nastavnika
+                        <button class="btn" style="margin-left: 20px;" (click)="sortIme(p, true)">🔼</button>
+                        <button class="btn" style="margin-left: 5px;" (click)="sortIme(p, false)">🔽</button>
+                      </th>
+                      <th>
+                        Prezime nastavnika
+                        <button class="btn" style="margin-left: 20px;" (click)="sortPrezime(p, true)">🔼</button>
+                        <button class="btn" style="margin-left: 5px;" (click)="sortPrezime(p, false)">🔽</button>
+                      </th>
+                      <th>Prosecna ocena</th>
+                      <th><img width="50px" height="50px" src="../../assets/info.png">Detalji</th>
+                    </thead>
+                    <tbody>
+                      <ng-container *ngFor="let n of p.nastavnici">
+                        <tr *ngIf="(imeNastavnika == '' || n.ime.toLowerCase().includes(imeNastavnika.toLocaleLowerCase())) &&
+                        (prezimeNastavnika == '' || n.prezime.toLocaleLowerCase().includes(prezimeNastavnika.toLocaleLowerCase()))
+                        && n.odobrenaRegistracija == 'da' && n.predajeUzrastu.includes(ulogovan.uzrast)">
+                          <td>{{n.ime}}</td>
+                          <td>{{n.prezime}}</td>
+                          <td>
+                            <ng-container *ngIf="prosecneOcene.has(n.korime)">
+                              {{n.prosecnaOcena.toFixed(2)}}
+                              <ngb-rating [(rate)]="n.prosecnaOcena" [starTemplate]="t" [readonly]="true" [max]="5" />
+                            </ng-container>
+                            <ng-container *ngIf="!prosecneOcene.has(n.korime)">
+                              Nije jos ocenjen
+                            </ng-container>
+                          </td>
+                          <td><button (click)="otvoriDetalje(n)" class="btn btn-link">Detalji</button></td>
+                        </tr>
+                      </ng-container>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- templejt za prikaz ocene -->
+<ng-template #t let-fill="fill">
+  <i class="bi-star-fill">
+      <i *ngIf="fill > 0" class="bi-star-fill filled" [style.width.%]="fill"></i>
+  </i>
+</ng-template>

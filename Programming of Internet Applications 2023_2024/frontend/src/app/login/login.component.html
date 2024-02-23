@@ -1,0 +1,154 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <div class="row justify-content-center jednaki-row">
+      <div class="col-md-6 jednake-col">
+          <div class="card">
+              <div class="card-header">
+                  <h3 class="text-center">Ulogujte se!</h3>
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                    <label for="username">Korisnicko ime:</label>
+                    <input type="text" [(ngModel)]="korime" class="form-control" id="username" placeholder="Unesite korisnicko ime...">
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label for="password">Lozinka:</label>
+                    <input type="password" [(ngModel)]="lozinka" class="form-control" id="password" placeholder="Unesite lozinku">
+                </div>
+                <div class="centrirano greska">{{greskaLogin}}</div>
+                <a routerLink="zaboravljenaLozinka">Zaboravljena lozinka?</a>
+                <div class="centrirano" style="margin-top: 15px;">
+                  <button (click)="login()" class="btn btn-success btn-block">Ulogujte se</button>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-6 jednake-col">
+        <div class="card" style="height: 100%">
+            <div class="card-header">
+                <h3 class="text-center">Nemate nalog?</h3>
+            </div>
+            <div class="card-body centrirano">
+              <button class="btn btn-success btn-block" [routerLink]="['registracija']">Registrujte se!</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6"  style="margin-top: 25px;">
+      <div class="card text-center">
+        <img src="../../assets/class.jfif" class="card-img-top" alt="...">
+        <div class="card-body">
+          Broj odrzanih casova u proslih 7 dana: <b>{{brojOdrzanihCasovaSedamDana}}</b>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6"  style="margin-top: 25px;">
+      <div class="card">
+        <img src="../../assets/student.jfif" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          Broj ucenika: <b>{{brojUcenika}}</b>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6"  style="margin-top: 25px;">
+      <div class="card">
+        <img src="../../assets/teacher.jpg" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          Broj nastavnika: <b>{{brojNastavnika}}</b>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6"  style="margin-top: 25px;">
+      <div class="card text-center">
+        <img src="../../assets/class.jfif" class="card-img-top" alt="...">
+        <div class="card-body">
+          Broj odrzanih casova u proslih mesec dana: <b>{{brojOdrzanihCasovaMesecDana}}</b>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row" style="margin-top: 25px;">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="text-center">Pregled nastavnika</h4>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="nazivPredmeta">Naziv predmeta:</label>
+                <input type="text" [(ngModel)]="nazivPredmeta" class="form-control" id="nazivPredmeta">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="imeNastavnika">Ime nastavnika:</label>
+                <input type="text" [(ngModel)]="imeNastavnika" class="form-control" id="imeNastavnika">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="prezimeNastavnika">Prezime nastavnika:</label>
+                <input type="text" [(ngModel)]="prezimeNastavnika" class="form-control" id="prezimeNastavnika">
+              </div>
+            </div>
+          </div>
+          <table class="table table-warning table-bordered align-middle" style="text-align: center; margin-top: 15px;">
+            <thead>
+              <tr>
+                <th>
+                  Naziv predmeta
+                  <button class="btn" style="margin-left: 20px;" (click)="sortPredmeti(true)">🔼</button>
+                  <button class="btn" style="margin-left: 5px;" (click)="sortPredmeti(false)">🔽</button>
+                </th>
+                <th>Nastavnici</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let p of sviPredmeti">
+              <tr *ngIf="nazivPredmeta == '' || p.naziv.toLocaleLowerCase().includes(nazivPredmeta.toLocaleLowerCase())">
+                <td>{{p.naziv}}</td>
+                <td>
+                  <p *ngIf="p.nastavnici.length == 0">Nijedan nastavnik ne predaje ovaj predmet</p>
+                  <table class="table table-warning table-striped table-bordered" style="text-align: center;" *ngIf="p.nastavnici.length > 0">
+                    <thead>
+                      <th>
+                        Ime nastavnika
+                        <button class="btn" style="margin-left: 20px;" (click)="sortIme(p, true)">🔼</button>
+                        <button class="btn" style="margin-left: 5px;" (click)="sortIme(p, false)">🔽</button>
+                      </th>
+                      <th>
+                        Prezime nastavnika
+                        <button class="btn" style="margin-left: 20px;" (click)="sortPrezime(p, true)">🔼</button>
+                        <button class="btn" style="margin-left: 5px;" (click)="sortPrezime(p, false)">🔽</button>
+                      </th>
+                    </thead>
+                    <tbody>
+                      <ng-container *ngFor="let n of p.nastavnici">
+                        <tr *ngIf="(imeNastavnika == '' || n.ime.toLowerCase().includes(imeNastavnika.toLocaleLowerCase())) &&
+                        (prezimeNastavnika == '' || n.prezime.toLocaleLowerCase().includes(prezimeNastavnika.toLocaleLowerCase()))
+                        && n.odobrenaRegistracija == 'da'">
+                          <td>{{n.ime}}</td>
+                          <td>{{n.prezime}}</td>
+                        </tr>
+                      </ng-container>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

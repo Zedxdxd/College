@@ -1,0 +1,29 @@
+.centrirano {
+  justify-content: center;
+  display: flex;
+}
+
+.greska {
+  color: red;
+}
+
+.input-text {
+  border: none;
+  border-bottom: 1px solid #333;
+  outline: none;
+  padding: 5px;
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input:focus {
+  border-bottom: 2px solid #007bff;
+}
+
+#profilnaSlika:hover {
+  cursor: pointer;
+}

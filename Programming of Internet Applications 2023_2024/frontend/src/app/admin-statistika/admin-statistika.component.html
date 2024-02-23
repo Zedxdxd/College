@@ -1,0 +1,123 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <!-- Bar dijagram -->
+  <div class="row">
+    <div class="col" style="text-align: center; background-color: white">
+      <h3 style="margin-top: 15px">
+        Dijagram kolona - broj nastavnika za svaki predmet i za svaki od uzrasta
+      </h3>
+      <apx-chart
+        #dijagramBar
+        [series]="dijagramBarOptions.series!"
+        [chart]="dijagramBarOptions.chart!"
+        [yaxis]="dijagramBarOptions.yaxis!"
+        [xaxis]="dijagramBarOptions.xaxis!"
+        [theme]="dijagramBarOptions.theme!"
+        [dataLabels]="dijagramBarOptions.dataLabels!"
+      ></apx-chart>
+    </div>
+  </div>
+
+  <!-- Pita dijagrami -->
+  <div class="row" style="margin-top: 30px">
+    <div
+      class="col-md-6 col-sm-12"
+      style="text-align: center; background-color: white"
+    >
+      <h3 style="margin-top: 15px">
+        Dijagram pita - raspodela polova medju nastavnicima
+      </h3>
+      <apx-chart
+        [series]="dijagramPitaNastavniciOptions.series!"
+        [chart]="dijagramPitaNastavniciOptions.chart!"
+        [labels]="dijagramPitaNastavniciOptions.labels!"
+        [responsive]="dijagramPitaNastavniciOptions.responsive!"
+        [theme]="dijagramPitaNastavniciOptions.theme!"
+      ></apx-chart>
+    </div>
+    <div
+      class="col-md-6 col-sm-12"
+      style="text-align: center; background-color: white"
+    >
+      <h3 style="margin-top: 15px">
+        Dijagram pita - raspodela polova medju ucenicima
+      </h3>
+      <apx-chart
+        [series]="dijagramPitaUceniciOptions.series!"
+        [chart]="dijagramPitaUceniciOptions.chart!"
+        [labels]="dijagramPitaUceniciOptions.labels!"
+        [responsive]="dijagramPitaUceniciOptions.responsive!"
+        [theme]="dijagramPitaUceniciOptions.theme!"
+      ></apx-chart>
+    </div>
+  </div>
+
+  <!-- Histogram dijagram -->
+  <div class="row" style="margin-top: 30px">
+    <div class="col" style="text-align: center; background-color: white">
+      <h3 style="margin-top: 15px">
+        Histogram - prosecan broj casova svakog dana u nedelji (2023)
+      </h3>
+      <apx-chart
+        [series]="dijagramHistogramOptions.series!"
+        [chart]="dijagramHistogramOptions.chart!"
+        [dataLabels]="dijagramHistogramOptions.dataLabels!"
+        [plotOptions]="dijagramHistogramOptions.plotOptions!"
+        [yaxis]="dijagramHistogramOptions.yaxis!"
+        [xaxis]="dijagramHistogramOptions.xaxis!"
+        [legend]="dijagramHistogramOptions.legend!"
+        [colors]="dijagramHistogramOptions.colors!"
+        [grid]="dijagramHistogramOptions.grid!"
+      ></apx-chart>
+    </div>
+  </div>
+
+  <!-- Dijagram linija -->
+  <div class="row" style="margin-top: 30px">
+    <div class="col" style="text-align: center; background-color: white">
+      <h3 style="margin-top: 15px">
+        Dijagram linija - Deset najangazovanijih nastavnika u 2023
+      </h3>
+      <apx-chart
+        #dijagramLinija
+        [series]="dijagramLinijaOptions.series!"
+        [chart]="dijagramLinijaOptions.chart!"
+        [xaxis]="dijagramLinijaOptions.xaxis!"
+        [dataLabels]="dijagramLinijaOptions.dataLabels!"
+        [grid]="dijagramLinijaOptions.grid!"
+        [stroke]="dijagramLinijaOptions.stroke!"
+        [title]="dijagramLinijaOptions.title!"
+      ></apx-chart>
+    </div>
+  </div>
+
+  <!-- Dijagram Horizontal Bar -->
+  <div class="row" style="margin-top: 30px">
+    <div class="col" style="text-align: center; background-color: white">
+      <h3 style="margin-top: 15px">Broj odrzanih casova po predmetu</h3>
+      <apx-chart
+        dijagramHorizontalBar
+        [series]="dijagramHorizontalBarOptions.series!"
+        [chart]="dijagramHorizontalBarOptions.chart!"
+        [dataLabels]="dijagramHorizontalBarOptions.dataLabels!"
+        [plotOptions]="dijagramHorizontalBarOptions.plotOptions!"
+        [xaxis]="dijagramHorizontalBarOptions.xaxis!"
+      ></apx-chart>
+    </div>
+  </div>
+
+  <!-- Dijagram polar -->
+  <div class="row" style="margin-top: 30px">
+    <div class="col-md-6 col-sm-12" style="text-align: center; background-color: white">
+      <h3 style="margin-top: 15px">Raspodela ucenika po uzrastu</h3>
+      <apx-chart
+        [series]="dijagramPolarOptions.series!"
+        [chart]="dijagramPolarOptions.chart!"
+        [labels]="dijagramPolarOptions.labels!"
+        [fill]="dijagramPolarOptions.fill!"
+        [stroke]="dijagramPolarOptions.stroke!"
+        [responsive]="dijagramPolarOptions.responsive!"
+      ></apx-chart>
+    </div>
+  </div>
+</div>

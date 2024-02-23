@@ -1,0 +1,179 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <div class="row justify-content-center jednaki-row">
+      <div class="col-md-12 jednake-col">
+          <div class="card">
+              <div class="card-header">
+                  <h3 class="text-center">Registrujte se!</h3>
+              </div>
+              <div class="card-body">
+                <!-- korisnicko ime -->
+                <div class="form-group">
+                  <label for="username">Korisnicko ime:</label>
+                  <input type="text" [(ngModel)]="korime" class="form-control" id="username" placeholder="Unesite korisnicko ime...">
+                  <div class="greska">{{greskaKorime}}</div>
+                </div>
+                <!-- lozinka -->
+                <div class="form-group" style="margin-top: 15px;">
+                  <label for="password">Lozinka:</label>
+                  <input type="password" [(ngModel)]="lozinka" class="form-control" id="password" placeholder="Unesite lozinku...">
+                  <div class="greska">{{greskaLozinka}}</div>
+                </div>
+                <!-- ponovljena lozinka -->
+                <div class="form-group" style="margin-top: 15px;">
+                  <label for="repeatedPassword">Ponovljena lozinka:</label>
+                  <input type="password" [(ngModel)]="ponovljenaLozinka" class="form-control" id="repeatedPassword" placeholder="Unesite ponovo lozinku....">
+                  <div class="greska">{{greskaPonovljenaLozinka}}</div>
+                </div>
+                <!-- bezbednosno pitanje -->
+                <div class="form-group" style="margin-top: 15px;">
+                  <label for="bezbPitanje">Bezbednosno pitanje:</label>
+                  <select id = "bezbPitanje" class="form-control" [(ngModel)]="izabranoPitanje.tekst">
+                    <option value="">Izaberite pitanje</option>
+                    <option value="{{p.tekst}}" *ngFor="let p of svaPitanja">{{p.tekst}}</option>
+                  </select>
+                  <div class="greska">{{greskaIzabranoPitanje}}</div>
+                </div>
+                <!-- odgovor -->
+                <div class="form-group" style="margin-top: 15px;">
+                  <label for="odgovor">Odgovor:</label>
+                  <input type="text" [(ngModel)]="odgovor" class="form-control" id="odgovor" placeholder="Unesite odgovor na bezbednosno pitanje...">
+                  <div class="greska">{{greskaOdgovor}}</div>
+                </div>
+                <!-- ime -->
+                <div class="form-group" style="margin-top: 15px;">
+                  <label for="ime">Ime:</label>
+                  <input type="text" [(ngModel)]="ime" class="form-control" id="ime" placeholder="Unesite ime...">
+                  <div class="greska">{{greskaIme}}</div>
+                </div>
+                <!-- prezime -->
+                <div class="form-group" style="margin-top: 15px;">
+                  <label for="prezime">Prezime:</label>
+                  <input type="text" [(ngModel)]="prezime" class="form-control" id="prezime" placeholder="Unesite prezime...">
+                  <div class="greska">{{greskaPrezime}}</div>
+                </div>
+                <!-- pol -->
+                <label style="margin-top: 15px;">Pol:</label>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="pol" type="radio" name="pol" value="M" id="polM"><label for="polM">Muski</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="pol" type="radio" name="pol" value="Z" id="polZ"><label for="polZ">Zenski</label>
+                </div>
+                <div class="greska">{{greskaPol}}</div>
+                <!-- adresa -->
+                <div class="form-group" style="margin-top: 15px;">
+                  <label for="adresa">Adresa:</label>
+                  <input type="text" [(ngModel)]="adresa" class="form-control" id="adresa" placeholder="Unesite adresu...">
+                  <div class="greska">{{greskaAdresa}}</div>
+                </div>
+                <!-- telefon -->
+                <div class="form-group" style="margin-top: 15px;">
+                  <label for="kontaktTelefon">Kontakt telefon:</label>
+                  <input type="text" [(ngModel)]="telefon" class="form-control" id="kontaktTelefon" placeholder="Unesite kontakt telefon...">
+                  <div class="greska">{{greskaTelefon}}</div>
+                  <p style="color: #b0b0b0;">Primer: 064-123-45-67</p>
+                </div>
+                <!-- email -->
+                <div class="form-group" style="margin-top: 15px;">
+                  <label for="email">E-mail:</label>
+                  <input type="text" [(ngModel)]="email" class="form-control" id="email" placeholder="Unesite imejl adresu...">
+                  <div class="greska">{{greskaEmail}}</div>
+                  <p style="color: #b0b0b0;">Primer: example@example.example</p>
+                </div>
+                <!-- Profilna slika -->
+                <div class="mb-3">
+                  <label for="inputProfilna" class="form-label">Profilna slika:</label>
+                  <input class="form-control" type="file" name="inputProfilna" id="inputProfilna" (change)="onFileSelected($event, 'profilna')">
+                </div>
+                <!-- Tip registracije -->
+                <label style="margin-top: 15px;">Registrujete se kao:</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" value="ucenik" [(ngModel)]="tip" name="tipRegistracije" id="ucenik"><label for="ucenik">Ucenik</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" value="nastavnik" [(ngModel)]="tip" name="tipRegistracije" id="nastavnik"><label for="nastavnik">Nastavnik</label>
+                </div>
+
+                <span *ngIf="tip == 'ucenik'">
+                  <!-- Tip skole -->
+                  <label style="margin-top: 15px;">Tip skole:</label>
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="tipSkole" type="radio" name="tipSkole" id="osnovna" value="osn"><label for="osnovna">Osnovna</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="tipSkole" type="radio" name="tipSkole" id="srednjaGimn" value="srGimn"><label for="srednjaGimn">Srednja - gimnazija</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="tipSkole" type="radio" name="tipSkole" id="srednjaStrucna" value="srStruc"><label for="srednjaStrucna">Srednja - strucna</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="tipSkole" type="radio" name="tipSkole" id="srednjaUmetnicka" value="srUmet"><label for="srednjaUmetnicka">Srednja - umetnicka</label>
+                  </div>
+                  <div class="greska">{{greskaTipSkole}}</div>
+                  <!-- Razred -->
+                  <div class="form-group" style="margin-top: 15px;">
+                    <label for="razred">Razred:</label>
+                    <input type="number" [(ngModel)]="razred" class="form-control" id="razred" placeholder="Unesite razred...">
+                    <div class="greska">{{greskaRazred}}</div>
+                  </div>
+                </span>
+
+                <span *ngIf="tip == 'nastavnik'">
+                  <!-- CV -->
+                  <div class="mb-3">
+                    <label for="inputCV" class="form-label" style="margin-top: 15px;">CV:</label>
+                    <input class="form-control" type="file" name="inputCV" id="inputCV" (change)="onFileSelected($event, 'CV')">
+                    <div class="greska">{{greskaCV}}</div>
+                  </div>
+                  <!-- predmeti -->
+                  <label style="margin-top: 15px;">Predmeti koje zelite da predajete:</label>
+                  <div class="row">
+                    <div class="form-group col-lg-4 col-md-6 col-sm-12" *ngFor="let p of sviPredmeti">
+                      <label class="form-check-label" for="{{p.naziv}}">
+                      <input class="form-check-input" type="checkbox" name="listaPredmeta" id="{{p.naziv}}" [(ngModel)]="p.selektovan">
+                      {{p.naziv}}</label>
+                    </div>
+                  </div>
+                  <div class="greska">{{greskaPredmeti}}</div>
+                  <div class="form-group" style="margin-top: 5px;">
+                    <input class="form-check-input" type="checkbox" id="nestoDrugo" name="nestoDrugo" [(ngModel)]="omogucenoPoljeZaCustomPredmet">
+                    <label class="form-check-label" for="nestoDrugo">Nesto drugo</label>
+                    <input class="form-control" type="text" [disabled]="omogucenoPoljeZaCustomPredmet == false" [(ngModel)]="imeCustomPredmet">
+                  </div>
+                  <div class="greska">{{greskaCustomPredmet}}</div>
+                  <!-- uzrast kome predaje -->
+                  <label style="margin-top: 15px;">Uzrast kome zelite da predajete:</label>
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="uzrastOsn14" type="checkbox" name="uzrast" id="osnovna14"><label for="osnovna14">Osnovna skola(1-4. razred)</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="uzrastOsn58" type="checkbox" name="uzrast" id="osnovna58"><label for="osnovna58">Osnovna skola(5-8. razred)</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="uzrastSr14" type="checkbox" name="uzrast" id="srednja14"><label for="srednja14">Srednja skola</label>
+                  </div>
+                  <div class="greska">{{greskaUzrast}}</div>
+                  <!-- gde ste culi za nas sajt -->
+                  <div class="form-group" style="margin-top: 15px;">
+                    <label for="gdeSteCuli">Gde ste culi za nas sajt?:</label>
+                    <textarea rows="3" [(ngModel)]="gdeSteCuli" class="form-control" name="gdeSteCuli" id="gdeSteCuli" placeholder="..."></textarea>
+                  </div>
+                  <div class="greska">{{greskaGdeSteCuli}}</div>
+                </span>
+
+                <hr style="margin-top: 30px;">
+                <div class="centrirano" style="color: green;">{{registracijaUspeh}}&nbsp;&nbsp;
+                  <div class="spinner-border spinner-border-sm centrirano" role="status" *ngIf="registracijaUspeh != '' ">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+                <div class="greska centrirano">{{registracijaGreska}}</div>
+                <div class="centrirano" style="margin-top: 15px;">
+                  <button class="btn btn-success btn-block" (click)="registracija()">Registrujte se</button>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

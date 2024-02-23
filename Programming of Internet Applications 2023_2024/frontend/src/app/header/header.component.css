@@ -1,0 +1,19 @@
+.navbar {
+  background-color: #a0fa9b;
+}
+
+.navbar-nav{
+  display:flex;
+  align-items: center;
+  flex-wrap: nowrap !important;
+}
+
+.active {
+  font-weight: bolder;
+}
+
+.centrirano {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

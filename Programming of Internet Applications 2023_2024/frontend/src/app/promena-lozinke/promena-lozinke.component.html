@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="container mt-5">
+<div class="card">
+  <div class="card-header">
+      <h3 class="text-center">Resetovanje lozinke</h3>
+  </div>
+  <div class="card-body">
+      <!-- stara lozinka -->
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="oldPassword">Stara lozinka:</label>
+        <input type="password" [(ngModel)]="staraLozinka" class="form-control" id="oldPassword" placeholder="Unesite staru lozinku...">
+        <div class="greska">{{greskaStaraLozinka}}</div>
+      </div>
+      <!-- lozinka -->
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="password">Nova lozinka:</label>
+        <input type="password" [(ngModel)]="lozinka" class="form-control" id="password" placeholder="Unesite novu lozinku...">
+        <div class="greska">{{greskaLozinka}}</div>
+      </div>
+      <!-- ponovljena lozinka -->
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="repeatedPassword">Ponovljena nova lozinka:</label>
+        <input type="password" [(ngModel)]="ponovljenaLozinka" class="form-control" id="repeatedPassword" placeholder="Unesite ponovo novu lozinku....">
+        <div class="greska">{{greskaPonovljenaLozinka}}</div>
+      </div>
+      <!-- promeni lozinku -->
+      <div class="centrirano" style="color: green; margin-top: 15px;" >{{promenaUspeh}} &nbsp;&nbsp;
+        <div class="spinner-border spinner-border-sm centrirano" role="status" *ngIf="promenaUspeh != '' ">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <div class="greska centrirano" style="margin-top: 15px;">{{promenaGreska}}</div>
+      <div class="centrirano" style="margin-top: 15px;">
+        <button (click)="promeniLozinku()" class="btn btn-success btn-block">Promeni lozinku</button>
+      </div>
+  </div>
+</div>
+</div>

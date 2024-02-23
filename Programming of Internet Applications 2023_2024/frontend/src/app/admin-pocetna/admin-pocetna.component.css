@@ -1,0 +1,26 @@
+.centrirano {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.greska {
+  color: red;
+}
+
+.selektovan {
+  font-weight: bolder;
+}
+
+.input-text {
+  border: none;
+  border-bottom: 1px solid #333;
+  outline: none;
+  padding: 5px;
+  width: 100%;
+}
+
+
+.input-text:focus {
+  border-bottom: 2px solid #007bff;
+}

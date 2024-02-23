@@ -1,0 +1,71 @@
+<div class="row text-center">
+  <div class="col-md-4">
+    <div class="btn-group">
+      <div
+        class="btn btn-success"
+        mwlCalendarPreviousView
+        [view]="view"
+        [(viewDate)]="viewDate"
+        (click)="prosli()"
+      >
+        Prosli
+      </div>
+      <div
+        class="btn btn-outline-success"
+        mwlCalendarToday
+        [(viewDate)]="viewDate"
+        (click)="danas()"
+      >
+        Danas
+      </div>
+      <div
+        class="btn btn-success"
+        mwlCalendarNextView
+        [view]="view"
+        [(viewDate)]="viewDate"
+        (click)="sledeci()"
+      >
+        Sledeci
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+  </div>
+  <div class="col-md-4">
+    <div class="btn-group">
+      <div
+        class="btn btn-success"
+        (click)="setView(CalendarView.Week)"
+        [class.active]="view === CalendarView.Week"
+      >
+        Nedelja
+      </div>
+      <div
+        class="btn btn-success"
+        (click)="setView(CalendarView.Day)"
+        [class.active]="view === CalendarView.Day"
+      >
+        Dan
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div [ngSwitch]="view">
+  <mwl-calendar-week-view
+    *ngSwitchCase="CalendarView.Week"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    [weekStartsOn]="weekStartsOn"
+  >
+  </mwl-calendar-week-view>
+  <mwl-calendar-day-view
+    *ngSwitchCase="CalendarView.Day"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+  >
+  </mwl-calendar-day-view>
+</div>

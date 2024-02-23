@@ -1,0 +1,209 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <div class="row" style="margin-top: 30px;">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Casovi u naredna 3 dana</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group row" style="margin-top: 15px;" *ngIf="casovi3Dana.length > 0">
+            <label for="prikaz" class="col col-form-label" style="display: flex; justify-content: end;">Prikaz:</label>
+            <div class="col-11">
+            <select id = "prikaz" class="form-control" style="display: inline-block;" [(ngModel)]="brojCasova">
+              <option value="5">5 casova</option>
+              <option value="10">10 casova</option>
+              <option value="100000">Svi casovi</option>
+            </select>
+          </div>
+          </div>
+          <p class="text-center" *ngIf="casovi3Dana.length == 0">Nemate casova u narednih 3 dana</p>
+          <table class="table table-warning table-bordered align-middle table-striped" style="text-align: center; margin-top: 15px;" *ngIf="casovi3Dana.length > 0">
+            <thead>
+              <tr>
+                <th>Predmet</th>
+                <th>Ucenik</th>
+                <th>Pocetak</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of casovi3Dana; index as i">
+                <ng-container *ngIf="i < brojCasova">
+                  <td>{{c.predmet}}</td>
+                  <td>{{c.ucenik.ime}} {{c.ucenik.prezime}}</td>
+                  <td>{{c.start | date:"dd.MM.yyyy HH:mm"}}</td>
+                  <td>
+                    <button class="btn btn-link" *ngIf="c.start.valueOf() - currDate.valueOf() <= 15*60*1000" (click)="otvoriSastanak(c)">Prikljuci se casu</button>
+                    <button class="btn btn-danger" (click)="formaOtkaziCas(c)" *ngIf="c.start.valueOf() - currDate.valueOf() >= 4*60*60*1000">Otkazi</button>
+                  </td>
+                </ng-container>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 30px;">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Lista zahteva za casovima</h3>
+        </div>
+        <div class="card-body">
+          <p class="text-center" *ngIf="zahteviCasovi.length == 0">Nema nijednog zahteva za casom.</p>
+          <table class="table table-warning table-bordered align-middle table-striped" style="text-align: center; margin-top: 15px;" *ngIf="zahteviCasovi.length > 0">
+            <thead>
+              <tr>
+                <th>Ucenik</th>
+                <th>Predmet</th>
+                <th>Opis</th>
+                <th>Pocetak</th>
+                <th>Prosecna ocena</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of zahteviCasovi">
+                  <td>{{c.ucenik.ime}} {{c.ucenik.prezime}}</td>
+                  <td>{{c.predmet}}</td>
+                  <td>{{c.opis == '' ? '/' : c.opis}}</td>
+                  <td>{{c.start | date:"dd.MM.yyyy HH:mm"}}</td>
+                  <td>
+                    <ng-container *ngIf="prosecneOcene.has(c.ucenik.korime)">
+                      {{c.ucenik.prosecnaOcena.toFixed(2)}}
+                      <ngb-rating [(rate)]="c.ucenik.prosecnaOcena" [starTemplate]="t" [readonly]="true" [max]="5" />
+                    </ng-container>
+                    <ng-container *ngIf="!prosecneOcene.has(c.ucenik.korime)">
+                      Nema dovoljno ocena
+                    </ng-container>
+                  </td>
+                  <td><button class="btn btn-success"  (click)="prihvatiCas(c)">Prihvati</button></td>
+                  <td><button class="btn btn-danger"  (click)="formaOdbijCas(c)">Odbij</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 30px;">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Kalendar casova</h3>
+        </div>
+        <div class="card-body">
+          <app-nastavnik-kalendar></app-nastavnik-kalendar>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 30px;">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Definisanje radnog vremena</h3>
+        </div>
+        <div class="card-body">
+          <div class="card-body">
+            <div class="form-group" style="margin-top: 15px;">
+              <label for="datum">Datum: </label>
+              <input type="date" [(ngModel)]="datum" class="form-control" id="datum">
+              <div class="greska">{{greskaDatum}}</div>
+            </div>
+            <div class="form-group" style="margin-top: 15px;">
+              <label for="vremeOd">Vreme od: </label>
+              <input type="time" [(ngModel)]="vremeOd" class="form-control" id="vremeOd">
+              <div class="greska">{{greskaVremeOd}}</div>
+            </div>
+            <div class="form-group" style="margin-top: 15px;">
+              <label for="vremeDo">Vreme do: </label>
+              <input type="time" [(ngModel)]="vremeDo" class="form-control" id="vremeDo">
+              <div class="greska">{{greskaVremeDo}}</div>
+            </div>
+            <div class="centrirano greska">{{greskaRadnoVreme}}</div>
+            <div class="centrirano" style="margin-top: 15px;">
+              <button (click)="definisiRadnoVreme()" class="btn btn-success btn-block">Odredi</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #modalOtkazivanje let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">Otkazi cas</h5>
+    <button type="btn btn-danger" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label><b>Predmet: </b>{{selektovanCas.predmet}}</label>
+    </div>
+    <div class="form-group">
+      <label><b>Ucenik: </b>{{selektovanCas.ucenik.ime}} {{selektovanCas.ucenik.prezime}}</label>
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+      <label for="datumPocetak">Datum i vreme pocetka:</label>
+      <input type="datetime-local" [(ngModel)]="strDatumPocetak" disabled class="form-control" id="datumPocetak">
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+      <label for="obrazlozenje">Razlog otkazivanja:</label>
+      <input type="text" [(ngModel)]="selektovanCas.obrazlozenje" class="form-control" id="obrazlozenje" placeholder="Unesite obrazlozenje...">
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="greska">{{greskaOtkaz}}</div>
+    <button type="button" class="btn btn-success" (click)="otkaziCas()">Otkazi</button>
+    <button type="button" class="btn btn-outline-success" (click)="close()">Odustani</button>
+  </div>
+</ng-template>
+
+<ng-template #modalOdbijanje let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">Odbij zahtev za casom</h5>
+    <button type="btn btn-danger" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label><b>Predmet: </b>{{selektovanCas.predmet}}</label>
+    </div>
+    <div class="form-group">
+      <label><b>Ucenik: </b>{{selektovanCas.ucenik.ime}} {{selektovanCas.ucenik.prezime}}</label>
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+      <label for="datumPocetak">Datum i vreme pocetka:</label>
+      <input type="datetime-local" [(ngModel)]="strDatumPocetak" disabled class="form-control" id="datumPocetak">
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+      <label for="obrazlozenje">Razlog odbijanja zahteva:</label>
+      <input type="text" [(ngModel)]="selektovanCas.obrazlozenje" class="form-control" id="obrazlozenje" placeholder="Unesite obrazlozenje...">
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="greska">{{greskaOtkaz}}</div>
+    <button type="button" class="btn btn-success" (click)="odbijCas()">Odbij zahtev</button>
+    <button type="button" class="btn btn-outline-success" (click)="close()">Otkazi</button>
+  </div>
+</ng-template>
+
+<!-- templejt za prikaz ocene -->
+<ng-template #t let-fill="fill">
+  <i class="bi-star-fill">
+      <i *ngIf="fill > 0" class="bi-star-fill filled" [style.width.%]="fill"></i>
+  </i>
+</ng-template>

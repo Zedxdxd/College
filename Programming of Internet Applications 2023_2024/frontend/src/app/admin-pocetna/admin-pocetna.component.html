@@ -1,0 +1,248 @@
+<app-header></app-header>
+
+<div class="container mt-5" style="margin-top: 15px;">
+
+  <!-- Ucenici -->
+  <div class="row table-responsive">
+    <h3>Podaci o ucenicima</h3>
+    <table class="table table-warning table-striped table-bordered" style="text-align: center;">
+      <thead>
+        <tr>
+          <th>Korisnicko ime</th>
+          <th>Ime</th>
+          <th>Prezime</th>
+          <th>Adresa</th>
+          <th>Email</th>
+          <th>Telefon</th>
+          <th>Tip skole</th>
+          <th>Razred</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of sviUcenici">
+          <td>{{u.korime}}</td>
+          <td>{{u.ime}}</td>
+          <td>{{u.prezime}}</td>
+          <td>{{u.adresa}}</td>
+          <td>{{u.email}}</td>
+          <td>{{u.telefon}}</td>
+          <td>{{u.tipSkole | tipSkole}}</td>
+          <td>{{u.razred}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Nastavnici -->
+  <div class="row table-responsive" style="margin-top: 15px;">
+    <h3>Podaci o nastavnicima</h3>
+    <p *ngIf="sviOdobreniNastavnici.length == 0">Nema nijednog registrovanog nastavnika.</p>
+    <table class="table table-warning table-striped table-bordered align-middle table-hover" style="text-align: center;" *ngIf="sviOdobreniNastavnici.length > 0">
+      <thead>
+        <tr>
+          <th>Korisnicko ime/th>
+          <th>Ime</th>
+          <th>Prezime</th>
+          <th>Adresa</th>
+          <th>Email</th>
+          <th>Telefon</th>
+          <th>Predaje predmete</th>
+          <th>Predaje uzrastu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let n of sviOdobreniNastavnici; index as i" (click)="selektuj(n)" [class.selektovan]="n.korime == selektovanNastavnik.korime">
+          <td>{{n.korime}}</td>
+          <td>{{n.ime}}</td>
+          <td>{{n.prezime}}</td>
+          <td>{{n.adresa}}</td>
+          <td>{{n.email}}</td>
+          <td>{{n.telefon}}</td>
+          <td>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" style="background-color: inherit;" *ngFor="let p of n.predajePredmete">
+                {{p}}
+              </li>
+            </ul>
+          </td>
+          <td>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" style="background-color: inherit;" *ngFor="let u of n.predajeUzrastu">
+                {{u | uzrast}}
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Azuriranje nastavnika -->
+  <div class="row" #scrollTarget>
+    <div class="card">
+      <div class="card-body">
+        <h3>Azuriranje nastavnika</h3>
+        <p *ngIf="selektovanNastavnik.korime == ''">Nije izabran nijedan nastavnik za azuriranje. Selektuje nastavnika koga zelite da azurirate.</p>
+        <span *ngIf="selektovanNastavnik.korime != ''">
+          <div class="form-group ">
+            <label for="ime">Ime:</label>
+            <div><input type="text" class="input-text" (input)="promena()" id="ime" [(ngModel)]="selektovanNastavnik.ime"></div>
+            <div class="greska">{{greskaNastavnikIme}}</div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="prezime">Prezime:</label>
+            <div><input type="text" class="input-text" (input)="promena()" id="prezime" [(ngModel)]="selektovanNastavnik.prezime"></div>
+            <div class="greska">{{greskaNastavnikPrezime}}</div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="adresa">Adresa:</label>
+            <div><input type="text" class="input-text" (input)="promena()" id="adresa" [(ngModel)]="selektovanNastavnik.adresa"></div>
+            <div class="greska">{{greskaNastavnikAdresa}}</div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="email">Email:</label>
+            <div><input type="text" class="input-text" (input)="promena()" id="email" [(ngModel)]="selektovanNastavnik.email"></div>
+            <div class="greska">{{greskaNastavnikEmail}}</div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="telefon">Telefon:</label>
+            <div><input type="text" class="input-text" (input)="promena()" id="telefon" [(ngModel)]="selektovanNastavnik.telefon"></div>
+            <div class="greska">{{greskaNastavnikTelefon}}</div>
+          </div>
+          <label style="margin-top: 15px;">Predmeti koje zelite da predajete:</label>
+          <div class="row">
+            <div class="form-group col-lg-6 col-md-12" *ngFor="let p of sviPredmeti">
+              <label class="form-check-label" for="{{p.naziv}}">
+                <input class="form-check-input" type="checkbox" (change)="promena()" name="listaPredmeta" id="{{p.naziv}}" [(ngModel)]="p.selektovan">
+                  {{p.naziv}}</label>
+            </div>
+          </div>
+          <div class="greska">{{greskaNastavnikPredmeti}}</div>
+          <label style="margin-top: 15px;">Uzrast kome zelite da predajete:</label>
+          <div class="form-check">
+            <input class="form-check-input" [(ngModel)]="uzrastOsn14" (change)="promena()" type="checkbox" name="uzrast" id="osnovna14"><label for="osnovna14">Osnovna skola(1-4. razred)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" [(ngModel)]="uzrastOsn58" (change)="promena()" type="checkbox" name="uzrast" id="osnovna58"><label for="osnovna58">Osnovna skola(5-8. razred)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" [(ngModel)]="uzrastSr14" (change)="promena()" type="checkbox" name="uzrast" id="srednja14"><label for="srednja14">Srednja skola</label>
+          </div>
+          <div class="greska">{{greskaNastavnikUzrast}}</div>
+          <div class="centrirano" style="color: green; margin-top: 15px;">{{azuriranjeUspeh}}&nbsp;&nbsp;
+            <div class="spinner-border spinner-border-sm centrirano" role="status" *ngIf="azuriranjeUspeh != '' ">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          <div class="centrirano greska" style="margin-top: 15px;">{{greskaAzuriranje}}</div>
+          <div class="centrirano" style="margin-top: 15px;">
+            <button class="btn btn-success btn-block" (click)="sacuvajIzmene()" [disabled]="!biloPromene || brGresaka > 0">Sacuvaj izmene</button>
+            <button class="btn btn-danger" style="margin-left: 10px;" (click)="deaktiviraj()">Deaktiviraj</button>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zahtevi za registraciju -->
+  <div class="row table-responsive" style="margin-top: 15px;">
+    <h3>Zahtevi za registraciju</h3>
+    <div class="greska centrirano" style="font-size: larger;">{{greskaRegistracija}}</div>
+    <div class="centrirano" style="color: green; margin-top: 15px; font-size: larger;"
+      *ngIf="uspehRegistracija != '' ">{{uspehRegistracija}}&nbsp;&nbsp;
+      <div class="spinner-border spinner-border-sm centrirano" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <p *ngIf="sviZahteviNastavnici.length == 0">Nema pristiglih zahteva za registraciju</p>
+    <table class="table table-warning table-striped table-bordered align-middle" style="text-align: center;" *ngIf="sviZahteviNastavnici.length > 0">
+      <thead>
+        <tr>
+          <th>Korisnicko ime</th>
+          <th>Ime i prezime</th>
+          <th>Adresa</th>
+          <th>Email</th>
+          <th>Telefon</th>
+          <th>Predaje predmete</th>
+          <th>Predaje uzrastu</th>
+          <th>CV</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let n of sviZahteviNastavnici; index as i">
+          <td>{{n.korime}}</td>
+          <td>{{n.ime}} {{n.prezime}}</td>
+          <td>{{n.adresa}}</td>
+          <td>{{n.email}}</td>
+          <td>{{n.telefon}}</td>
+          <td>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" style="background-color: inherit;" *ngFor="let p of n.predajePredmete">
+                {{p}}
+              </li>
+            </ul>
+          </td>
+          <td>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" style="background-color: inherit;" *ngFor="let u of n.predajeUzrastu">
+                {{u | uzrast}}
+              </li>
+            </ul>
+          </td>
+          <td><a [href]="n.cvurl">Pregledaj CV</a></td>
+          <td><button class="btn btn-success" (click)="odobriRegistraciju(n)">Odobri</button></td>
+          <td><button class="btn btn-danger" (click)="odbijRegistraciju(n)">Odbij</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Dodavanje novih predmeta -->
+  <div class="row" style="margin-top: 15px;">
+    <div class="col table-responsive">
+      <h4>Zahtevani predmeti</h4>
+      <div class="greska centrirano" style="font-size: larger;">{{greskaOdobravanje}}</div>
+      <div class="centrirano" style="color: green; margin-top: 15px; font-size: larger;"
+          *ngIf="uspehOdobravanje != '' ">{{uspehOdobravanje}}&nbsp;&nbsp;
+        <div class="spinner-border spinner-border-sm centrirano" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <p *ngIf="zahtevaniPredmeti.length == 0">Nema novih zahteva za predmetima</p>
+      <table class="table table-warning table-striped table-bordered align-middle" style="text-align: center;" *ngIf="zahtevaniPredmeti.length > 0">
+        <thead>
+          <tr>
+            <th>Naziv</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of zahtevaniPredmeti">
+            <td>{{p.naziv}}</td>
+            <td>
+              <button class="btn btn-success" (click)="odobriPredmet(p)">Odobri</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <h4>Unosenje novog predmeta</h4>
+      <div class="form-group" style="margin-top: 30px;">
+        <label for="predmet">Naziv za nov predmet:</label>
+        <div><input type="text" class="input-text" id="predmet" [(ngModel)]="imeNovPredmet"></div>
+        <div class="greska">{{greskaNovPredmet}}</div>
+        <div class="centrirano" style="color: green; margin-top: 15px;">{{dodavanjeNovUspeh}}&nbsp;&nbsp;
+          <div class="spinner-border spinner-border-sm centrirano" role="status" *ngIf="dodavanjeNovUspeh != '' ">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <div class="centrirano" style="margin-top: 15px;">
+          <button class="btn btn-success btn-block" (click)="dodajPredmet()" [disabled]="imeNovPredmet == ''">Dodaj predmet</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<app-header></app-header>
+<div class="container" style="width: 80%;">
+  <div class="row centrirano">
+    <div class="col-lg-6 centrirano"  style="margin-top: 50px;">
+      <img [src]="profilnaUrl" (click)="izaberiProfilnu()" alt="" width="400" height="400" class="rounded" id="profilnaSlika">
+    </div>
+    <div class="col-lg-6"  style="margin-top: 50px;">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-group ">
+            <label for="ime">Ime:</label>
+            <div><input type="text" class="input-text" (input)="promena()" id="ime" [(ngModel)]="ulogovan.ime"></div>
+            <div class="greska">{{greskaIme}}</div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="prezime">Prezime:</label>
+            <div><input type="text" class="input-text" (input)="promena()" id="prezime" [(ngModel)]="ulogovan.prezime"></div>
+            <div class="greska">{{greskaPrezime}}</div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="adresa">Adresa:</label>
+            <div><input type="text" class="input-text" (input)="promena()" id="adresa" [(ngModel)]="ulogovan.adresa"></div>
+            <div class="greska">{{greskaAdresa}}</div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="email">Email:</label>
+            <div><input type="text" class="input-text" (input)="promena()" id="email" [(ngModel)]="ulogovan.email"></div>
+            <div class="greska">{{greskaEmail}}</div>
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="telefon">Telefon:</label>
+            <div><input type="text" class="input-text" (input)="promena()" id="telefon" [(ngModel)]="ulogovan.telefon"></div>
+            <div class="greska">{{greskaTelefon}}</div>
+          </div>
+          <label style="margin-top: 15px;">Predmeti koje zelite da predajete:</label>
+            <div class="row">
+              <div class="form-group col-lg-6 col-md-12" *ngFor="let p of sviPredmeti">
+                <label class="form-check-label" for="{{p.naziv}}">
+                  <input class="form-check-input" type="checkbox" (change)="promena()" name="listaPredmeta" id="{{p.naziv}}" [(ngModel)]="p.selektovan">
+                  {{p.naziv}}</label>
+              </div>
+            </div>
+            <div class="greska">{{greskaPredmeti}}</div>
+            <label style="margin-top: 15px;">Uzrast kome zelite da predajete:</label>
+            <div class="form-check">
+              <input class="form-check-input" [(ngModel)]="uzrastOsn14" (change)="promena()" type="checkbox" name="uzrast" id="osnovna14"><label for="osnovna14">Osnovna skola(1-4. razred)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" [(ngModel)]="uzrastOsn58" (change)="promena()" type="checkbox" name="uzrast" id="osnovna58"><label for="osnovna58">Osnovna skola(5-8. razred)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" [(ngModel)]="uzrastSr14" (change)="promena()" type="checkbox" name="uzrast" id="srednja14"><label for="srednja14">Srednja skola</label>
+            </div>
+            <div class="greska">{{greskaUzrast}}</div>
+          <div class="centrirano" style="color: green; margin-top: 15px;">{{azuriranjeUspeh}}&nbsp;&nbsp;
+            <div class="spinner-border spinner-border-sm centrirano" role="status" *ngIf="azuriranjeUspeh != '' ">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          <div class="centrirano greska" style="margin-top: 15px;">{{greskaAzuriranje}}</div>
+          <div class="centrirano" style="margin-top: 15px;">
+            <button class="btn btn-success btn-block" (click)="sacuvajIzmene()" [disabled]="!biloPromene || brGresaka > 0">Sacuvaj izmene</button>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<input type="file" name="inputProfilna" id="inputProfilna" hidden (change)="onFileSelected($event)">
