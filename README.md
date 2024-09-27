@@ -1,3 +1,3 @@
 # College projects
 
-Work done throughout college on different courses. These are from the courses that I passed last school years (none of these are from the current school year).
+Work done throughout my schooling in the School of Electrical Engineering, University of Belgrade. The projects that were done as a part of some course are all from the previous year.
