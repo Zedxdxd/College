@@ -8,16 +8,16 @@
 
 -In the config folder, the user can specify which code does what in terms of formatting, so the output can be neatly formatted code.
 
--General use of MicroJava fuzzer:
-lex_file = # path to the .lex specification
-cup_file = # path to the .cup specification
-output_file = # path to the output file
-generator = SyntaxNodeGenerator(lex_file, cup_file)
-ast_grammar = generator.generate()
-fuzzer: MicroJavaFuzzer = MicroJavaFuzzer(start_symbol=start_symbol, grammar=ast_grammar)
-with open(output_file, "w") as file:
-    file.write(fuzzer.fuzz())
-
+-General use of MicroJava fuzzer:  
+&nbsp;&nbsp;&nbsp;&nbsp;lex_file = # path to the .lex specification  
+&nbsp;&nbsp;&nbsp;&nbsp;cup_file = # path to the .cup specification  
+&nbsp;&nbsp;&nbsp;&nbsp;output_file = # path to the output file  
+&nbsp;&nbsp;&nbsp;&nbsp;generator = SyntaxNodeGenerator(lex_file, cup_file)  
+&nbsp;&nbsp;&nbsp;&nbsp;ast_grammar = generator.generate()  
+&nbsp;&nbsp;&nbsp;&nbsp;fuzzer: MicroJavaFuzzer = MicroJavaFuzzer(start_symbol=start_symbol, grammar=ast_grammar)  
+&nbsp;&nbsp;&nbsp;&nbsp;with open(output_file, "w") as file:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.write(fuzzer.fuzz())  
+  
 # Code for "The Fuzzing Book"
 
 This folder holds the code from "The Fuzzing Book".  This book addresses the problem of software bugs by automating software testing, specifically by _generating tests automatically_. Recent years have seen the development of novel techniques that lead to dramatic improvements in test generation and software testing. They now are mature enough to be assembled in a book - even with executable code.
